@@ -19,6 +19,7 @@
   "dependencies": {
     "@ai-sdk/gateway": "4.0.86",
     "@electric-sql/pglite": "0.5.8",
+    "@vercel/analytics": "^2.0.1",
     "ai": "7.0.106",
     "drizzle-orm": "0.45.2",
     "next": "16.3.5",
