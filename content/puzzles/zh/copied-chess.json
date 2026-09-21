@@ -1,0 +1,47 @@
+{
+  "id": "curated-copied-chess",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "不会下棋的八分",
+  "surface": "一个只认识棋子、不懂战术的人，同时和八位高手下棋。他四盘执白、四盘执黑，可以在棋盘间走动，高手会等他落子。\n赢一盘得两分，和棋得一分，输棋零分。他没有助手和电子设备，却保证自己总分至少八分。他用的是什么办法？",
+  "solution": "他把棋局两两配对，每对包含自己执白和执黑各一盘。高手在他执黑的棋盘上走白棋，他就把这一步搬到自己执白的另一盘；另一位高手的黑棋回应，再搬回第一盘。这样每对高手实际上在隔着他互相对弈。每对棋局无论分出胜负还是两盘和棋，他合计都得两分，四对就是八分。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "他将每盘自己执黑的棋局与一盘自己执白的棋局配对，转抄两位高手的对应着法。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "每对棋局相当于高手互相对弈，自己的总分固定为两分，四对共八分。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "棋盘初始布局相同，没有棋钟限制；他能辨认并复制合法着法。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "高手姓名、具体棋谱和每一盘胜负未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "他的对手们能不能成为彼此的棋力来源？",
+    "四盘白棋和四盘黑棋，可以两两配成什么关系？",
+    "把一位高手的走法搬到另一盘，让两位高手实际上互相下棋。"
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "策略",
+    "经典",
+    "反转"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "user3453281 / singletee",
+    "url": "https://puzzling.stackexchange.com/questions/8722/houdini-versus-the-chess-masters",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Houdini versus the chess masters》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

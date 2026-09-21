@@ -1,0 +1,52 @@
+{
+  "id": "curated-perfect-fit-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "A Perfect Fit",
+  "surface": "A hid inside a hard shell, thinking the danger had passed. Then B was brought over.\n“Why did it have to be you?” A asked.\n“We used to be one,” B replied. “I am just the right size for this.”\nA was promptly forced out. What happened?",
+  "solution": "Someone was eating a cooked crab. A was the meat still stuck inside a thick leg segment. B was a thinner shell segment broken off the same leg. The diner inserted the narrow shell through the opening and pushed the meat out. They had been parts of the same leg, and the narrow segment fitted inside the wider one. The conversation personifies food; the crab was already cooked and nothing literally spoke.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "A is cooked crab meat stuck in a leg shell; B is a thinner shell segment from the same leg.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "A diner uses the thin shell as a tool to push the meat out of the wider shell.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The conversation is personification, not a conversation between people or living crabs.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "Both parts came from the same crab and the scene takes place during a meal.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The crab species, diner and location are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Are A and B people?",
+    "“One” and “the right size” describe a physical relationship.",
+    "Think of removing food from a hard shell with a tool made from the food itself."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Twist",
+    "Everyday",
+    "Personification"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "妄想摘星辰（WXmirage）",
+    "url": "https://ltda.wikidot.com/soup-812",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “般配”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

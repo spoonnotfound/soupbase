@@ -1,0 +1,47 @@
+{
+  "id": "curated-younger-birthday-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Younger Twin’s Earlier Birthday",
+  "surface": "Twins were born in the same hospital on the same calendar date, with the brother born first. Thirty years later, during a video call, his sister is celebrating her thirtieth birthday. He says, “It is not my birthday here yet.” Their clocks are correct and neither celebrates early. How?",
+  "solution": "They now live in different time zones. Her location has passed midnight into their birthday date, while his is still on the previous date. She begins celebrating earlier by her local calendar; he remains the older twin in actual elapsed age.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "They live in different time zones with different local dates during the call.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Her location reaches the birthday date first, without changing their birth order.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Both use the same calendar; no leap-day or calendar-system trick is involved.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Their cities and exact time difference are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "A video call can connect different parts of the world.",
+    "The same instant can fall on different calendar dates.",
+    "Midnight has reached her time zone first."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Everyday",
+    "Time",
+    "Perspective"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "rybo111 / Jafe",
+    "url": "https://puzzling.stackexchange.com/questions/82003/sallys-older-brother",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Sally's older brother”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

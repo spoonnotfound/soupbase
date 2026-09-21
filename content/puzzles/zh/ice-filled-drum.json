@@ -1,0 +1,47 @@
+{
+  "id": "curated-ice-filled-drum",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "装满以后还能再装",
+  "surface": "我用水把一个硬质容器占得满满当当，放在温暖的房间里。\n第二天，没有人取走里面的水，也没有渗漏或蒸发，容器更没有变大；我却还能往里面倒入好几升水，一滴都没溢出。为什么？",
+  "solution": "起初容器里占满的是结成整块的冰，也就是固态的水，不是已经处于液态的水。冰在温暖房间里融化后，同样质量的水占据的体积变小，容器里便出现空余空间。所以还能再倒进一些水，而不用取走原有的水。初始冰体没有松散冰块之间的大空隙，容器也没有膨胀。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "最初占满容器的是完整冰体，即固态的水。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "冰融化成液态后体积减小，在不移走水的情况下留下空余容量。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "容器容量足够大且始终不变；不靠漏水、蒸发或松散冰块间的空隙解释。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "具体容量、温度和多装入多少升未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "“水”是否只能指液态？",
+    "质量不变，体积就一定不变吗？",
+    "一整块冰融化成水后，占据的空间会变小。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "经典",
+    "科学",
+    "措辞"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "cst1992 / Matt",
+    "url": "https://puzzling.stackexchange.com/questions/31249/the-magical-water-drum",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《The magical water drum》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

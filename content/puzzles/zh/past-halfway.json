@@ -1,0 +1,47 @@
+{
+  "id": "curated-past-halfway",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "来回都过半",
+  "surface": "我沿同一条路往返家和公司。每次从车窗看见朋友的房子时，我都会想：“路已经走过一半了。”\n无论去公司还是回家，这句话都是真的。房子没有移动，路程也没有变长。怎么回事？",
+  "solution": "朋友的房子位于整段路线的中点附近。两个方向上，我都是驶过中点之后，回头从侧后方的车窗看它，而不是迎面看见它时就说这句话。所以每一次“看见房子”的时刻，都已经越过一半。题目没有说看见房子就等于刚到房子跟前。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "朋友的房子在固定路线的中点附近。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "往返时都是先经过中点，再回头看房子，所以看见时都已经过半。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "路线、起点和终点固定，没有绕路或移动房屋。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定具体距离、交通工具型号和看回去的时间间隔。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "“看见”和“经过”一定发生在同一时刻吗？",
+    "车窗不只能让人看到前方。",
+    "他两次都是过了中点后，回头看那幢房子。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "视角",
+    "日常",
+    "措辞"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Etheryte / Rand al'Thor",
+    "url": "https://puzzling.stackexchange.com/questions/12736/a-long-lonely-drive",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《A long, lonely drive》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

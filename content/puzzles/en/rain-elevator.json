@@ -1,0 +1,47 @@
+{
+  "id": "curated-rain-elevator-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Rainy-Day Elevator",
+  "surface": "A resident of the tenth floor always takes the elevator straight to the lobby. Returning alone on dry days, he usually gets out on the fifth floor and walks the rest. On rainy days he rides straight to ten. The elevator works normally and its buttons never move. Why?",
+  "solution": "He is short and the old elevator has a tall vertical button panel. He can reach the lobby and fifth-floor buttons but not the tenth-floor button. On rainy days he carries a long umbrella and uses its tip to press ten. The elevator serves every floor; his reach changes when he has a tool.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "He can reach the lobby and fifth-floor buttons but not the higher tenth-floor button.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "On rainy days his long umbrella lets him press ten; on dry days he lacks that tool.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "No other passenger presses the button for him and there is no alternative accessible control.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "His exact height, age and occupation are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "What does he carry on rainy days?",
+    "Being able to ride to a floor is different from reaching its button.",
+    "A long object extends his reach."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Classic",
+    "Everyday",
+    "Twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Elgert / HumanlyRespectable",
+    "url": "https://puzzling.stackexchange.com/questions/2419/elevator-puzzle",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Elevator puzzle”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

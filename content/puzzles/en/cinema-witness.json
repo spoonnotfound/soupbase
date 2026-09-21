@@ -1,0 +1,47 @@
+{
+  "id": "curated-cinema-witness-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Shot Nobody Reported",
+  "surface": "I sit and watch a familiar-looking person draw a gun; someone else falls. Many people around me see it, but nobody calls the police. I stay seated too. Much later the lights come on and we leave. Nobody is conspiring or frozen with fear. Why?",
+  "solution": "We are watching a movie in a cinema. The familiar face belongs to an actor I recognize from other films, not a personal acquaintance. The shot and collapse are fictional events on the screen. When the movie ends, the auditorium lights come on and the audience leaves.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The group is watching fictional events on a cinema screen.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The familiar face is an actor and the lights signal the film’s end, so no police response is needed.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "There is no real shooting or injury in the auditorium.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The film, actor and seats are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Recognizing a face does not mean knowing the person personally.",
+    "Why is everyone seated and waiting for the lights?",
+    "The scene takes place during a cinema screening."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Classic",
+    "Perspective",
+    "Everyday"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Smart / LinuxBlanket",
+    "url": "https://puzzling.stackexchange.com/questions/66008/why-does-nobody-contact-the-police-about-the-murder",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Why does nobody contact the police about the murder?”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

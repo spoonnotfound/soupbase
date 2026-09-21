@@ -1,0 +1,52 @@
+{
+  "id": "curated-thank-you-at-gunpoint",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "枪口下的谢谢",
+  "surface": "一个男人走进酒吧，向酒保要一杯水。酒保看了他一会儿，突然拿出一把枪对着他。\n没有人开枪。男人愣了一下，随后真诚地说了声“谢谢”，连水都没喝就走了。\n他不是被迫道谢，也不是逃跑。为什么？",
+  "solution": "男人一直在打嗝，想喝水缓解。酒保看出了他的情况，用突然举枪的动作吓了他一跳。在这个故事里，男人受惊后打嗝恰好停止了，要水的目的已经达到，因此真心道谢并离开。酒保没有打算开枪，男人也没有中枪；他们不是在表演或抢劫。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "男人要水是想缓解打嗝。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "酒保有意吓他，故事中他的打嗝因此停止，所以不再需要水并道谢。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "没有开枪、伤人、抢劫或事先安排的表演。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "道谢是出于问题得到解决，不是为了稳住持枪者。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "枪是否装弹、男人的身份和酒吧位置未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "男人要水，未必是因为口渴。",
+    "他离开时，要水之前的一个身体小困扰已经消失。",
+    "一次突然的惊吓，在故事中止住了他反复出现的一种声音。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "经典",
+    "反直觉",
+    "轻悬疑"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "SteamCode / Welz",
+    "url": "https://puzzling.stackexchange.com/questions/64047/why-use-the-gun",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Why use the gun?》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整改编说明见内容许可文件。"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "curated-undamaged-armor-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Armor Where There Are No Holes",
+  "surface": "An air unit examines its returning planes. Their wings show many bullet holes, while areas around the engines show almost none. Someone proposes stronger wings, but an engineer prioritizes the areas with few holes. The engineer has read the table correctly. Why?",
+  "solution": "The sample contains only planes that returned. Wing damage can be survivable; damage to vital areas often prevents a plane returning at all. Those planes never enter the table. In this fictional scenario all areas can be hit, so the absence of surviving examples with engine damage suggests those areas need protection.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The sample excludes planes that failed to return.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Planes hit in vital areas rarely return, making few holes among survivors a possible sign of vulnerability.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "This is a fictional analysis, with all areas exposed to attack.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "No real war, historical person or exact hit probability is specified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Which planes are missing from the table?",
+    "A visible hole belongs to a plane that made it back.",
+    "Perhaps no plane returns with a wound in that particular place."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Counterintuitive",
+    "Observation",
+    "Reasoning"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Chuck / M Oehm",
+    "url": "https://puzzling.stackexchange.com/questions/57058/save-our-wwii-planes",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Save our WWII planes”. Source license: CC BY-SA 4.0 / CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

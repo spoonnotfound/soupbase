@@ -1,0 +1,47 @@
+{
+  "id": "curated-missing-islands-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Six Islands Missing",
+  "surface": "At dawn a pilot counts 17 bare rocky islets. A week later, at the same time of day on the same route and altitude, she counts only 11. Visibility is clear and her count is correct. No construction, earthquake or erosion occurred, and the rocks never moved. Where did six islands go?",
+  "solution": "The tide was lower on the first flight. On the second it was high enough to cover six low rocks, leaving only eleven exposed. Similar clock times do not guarantee equal tidal levels. The rocks remain in place beneath the water.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The first flight occurs at a lower tide than the second.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The higher water covers six low rocky outcrops that were previously exposed.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Visibility is unobstructed and the rocks’ positions and sizes do not change.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The location, tidal heights and complete local tidal cycle are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "If the islands stay still, could the sea surface move?",
+    "Does dawn always coincide with the same water level?",
+    "A higher tide covers the six lowest rocks."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Nature",
+    "Observation",
+    "Gentle"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / Weather Vane",
+    "url": "https://puzzling.stackexchange.com/questions/106050/why-did-the-number-of-islands-change",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Why did the number of islands change?”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

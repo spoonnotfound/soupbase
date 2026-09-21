@@ -1,0 +1,47 @@
+{
+  "id": "curated-bedtime-stairs-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Ten Floors After Dinner",
+  "surface": "A family staying on the tenth floor uses the elevator throughout the day, but climbs the stairs together after dinner. The elevator works and crowds do not bother them. The parents dislike climbing, yet lately they can finally get to sleep earlier. Why?",
+  "solution": "The children normally remain energetic after dinner and play noisily in their room for a long time. On this particular trip, a slow walk up the stairs leaves them ready to settle down sooner. The parents accept the climb because it helps this family have a quieter bedtime.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The children normally have plenty of energy after dinner and keep playing in the room.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Climbing the stairs uses some of that energy, so they settle down and sleep sooner.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Everyone in this fictional family can manage the stairs normally.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The children’s ages and any general parenting effectiveness are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Who is least ready for bed after dinner?",
+    "The parents dislike the climb but appreciate what happens afterward.",
+    "The stairs use up some of the children’s energy."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Everyday",
+    "Gentle",
+    "Motive"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "cpj / LowIntHighCha",
+    "url": "https://puzzling.stackexchange.com/questions/31772/my-strange-hotel-room-neighbours",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “My strange hotel room neighbours”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

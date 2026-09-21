@@ -1,0 +1,47 @@
+{
+  "id": "curated-broken-countdown-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "A Countdown from 5 to 6",
+  "surface": "A timer counts down once per second using seven illuminated segments per digit. I see 5, then 6 one second later. After another second only the top horizontal segment and lower-right vertical segment glow. The timer has neither reversed nor reset. What is wrong?",
+  "solution": "The upper-right segment has failed. The actual digits are 9, 8 and 7. Removing that segment turns a 9 into a 5 and an 8 into a 6. A 7 normally uses the top and both right-hand segments, so only the top and lower-right ones remain visible.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The display’s upper-right segment is unlit.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The true sequence 9, 8, 7 appears as 5, 6 and the two-segment remnant when that segment is missing.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "All six other segments work normally and these are single-digit values.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The device’s purpose, damage cause and repair are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Could the same segment be missing from every digit?",
+    "What happens if you add the same segment to both 5 and 6?",
+    "The upper-right segment would turn them into 9 and 8; its absence also explains the broken 7."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Observation",
+    "Numbers",
+    "Reasoning"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Mike Ball / ColdFrog",
+    "url": "https://puzzling.stackexchange.com/questions/46990/the-broken-crosswalk-timer",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “The broken crosswalk timer”. Source license: CC BY-SA 4.0 / CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

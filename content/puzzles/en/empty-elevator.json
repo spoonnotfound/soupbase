@@ -1,0 +1,46 @@
+{
+  "id": "curated-empty-elevator-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Sending Away an Empty Elevator",
+  "surface": "In his apartment lobby, a man steps into an elevator, presses two and immediately steps back out. He watches it leave empty, calls an elevator again and finally reaches his upper-floor home. It is neither a prank nor a favor for someone else. Why?",
+  "solution": "The elevator bank shares one call button. The first car has a broken access-card reader, so it can reach public lower floors but not residential floors. While it remains at the lobby, pressing the call button simply reopens it. He sends it to two so another car will answer. Its working reader accepts his card and takes him home.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The first car has a broken card reader and cannot serve his secured residential floor.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The cars share a call button; sending the first away lets him summon a different working car.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The first car can travel and open normally; his access card is valid.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The building and his exact floor are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "A moving elevator may still be unable to take him home.",
+    "One lobby button serves several cars.",
+    "Public floors need no card, but his home does; the first reader is broken."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Everyday",
+    "Odd behavior"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Gabriel Burns / user21939",
+    "url": "https://puzzling.stackexchange.com/questions/35609/the-empty-elevator",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “The Empty Elevator”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

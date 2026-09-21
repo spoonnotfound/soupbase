@@ -1,0 +1,47 @@
+{
+  "id": "curated-serial-banknotes-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Counting Cash in a Second",
+  "surface": "I hand a friend a stack of fresh banknotes, all the same denomination. There are exactly 41. Without counting through them, using a machine or asking me, he checks only the top and bottom notes and states the total. How?",
+  "solution": "The new notes have consecutive serial numbers and are stacked in order, with none missing. Their shared-prefix numeric parts differ by 40. Subtracting the first from the last and adding one gives 41 notes.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The notes have consecutive serial numbers, in order, with none missing.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The end numbers differ by 40, so the inclusive count is 41.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The denomination and serial-number prefix are the same throughout.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The currency and actual serial numbers are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Why mention fresh notes?",
+    "Besides its value, each note carries unique information.",
+    "Consecutive numbers differing by 40 include how many numbers when both ends count?"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Observation",
+    "Everyday",
+    "Numbers"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "BrettFromLA / Spencerkatty",
+    "url": "https://puzzling.stackexchange.com/questions/48674/how-did-he-count-my-money-so-fast",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “How did he count my money so fast?”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

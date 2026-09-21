@@ -1,0 +1,47 @@
+{
+  "id": "curated-grounded-pilot",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "飞机坠毁，他毫发无伤",
+  "surface": "一名飞行员正在控制飞机。飞机撞上了树，摔得粉碎。\n他没有跳伞，没有离开驾驶位置，也没有任何防护装置，却连一道擦伤都没有。飞机是真的，不是游戏或录像。怎么回事？",
+  "solution": "他操纵的是一架遥控模型飞机，自己一直站在地面上用遥控器控制。撞树并摔碎的是模型，飞行员根本不在飞机里，因此既不需要跳伞，也不会因机身坠毁而受伤。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "坠毁的是一架真实飞行的遥控模型飞机。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "操纵者始终在地面上，没有坐在飞机里。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "不是模拟游戏、拍摄特效或事后播放的录像。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "模型尺寸、价格和操纵者年龄未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "控制飞机的人一定坐在里面吗？",
+    "飞机可以是真的，但尺寸未必和你想的一样。",
+    "他站在地上，手里拿着遥控器。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "经典",
+    "视角",
+    "温和"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "stackzebra / Saeïdryl",
+    "url": "https://puzzling.stackexchange.com/questions/64907/how-did-the-pilot-survive-the-crash",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《How did the pilot survive the crash?》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

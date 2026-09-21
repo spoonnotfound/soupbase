@@ -1,0 +1,46 @@
+{
+  "id": "curated-discarded-purchase",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "出门就扔的商品",
+  "surface": "男人买了一件很薄的小商品，走到商店门口时看了一眼，就把它扔进垃圾桶。\n商品不是坏的，店员没有骗他，他也没有生气或要求退款。这正是他预料中可能发生的结果。为什么？",
+  "solution": "他买的是一张即开型刮奖券。在走向门口的几步路上，他已经刮开了覆盖层。看清结果后，他知道这张券没有中奖，便把它扔掉。购买的是一次获知中奖结果的机会，不是一件准备长期保存的物品。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "他买的是即开型刮奖券，并在离店前刮开了覆盖层。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "券没有中奖，得知结果后他认为没有保留价值，因此扔掉。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "刮奖券有效，购买过程没有诈骗；扔掉的不是包装或收据。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定票价、奖额或他平时是否购买彩票。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "他买到的价值，会不会在使用一次后就消失？",
+    "他在走向门口时已经完成了一个小动作。",
+    "这件商品需要刮开一层，才能知道有没有中奖。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "日常",
+    "反常行为"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Riley / Rupert Morrish",
+    "url": "https://puzzling.stackexchange.com/questions/64123/man-buys-item-throws-it-away-on-his-way-out",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Man buys item, throws it away on his way out》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

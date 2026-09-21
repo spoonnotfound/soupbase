@@ -1,0 +1,47 @@
+{
+  "id": "curated-lighter-passenger",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "多了乘客，车却更轻",
+  "surface": "一辆货车出发前过了磅。开了很长一段路后，一只小鸟落在车顶，跟着它一起通过另一台准确的地磅。\n第二次读数反而更低。司机没换人，货物没少，也没人扔东西下车。为什么？",
+  "solution": "货车一路消耗了燃油。虽然司机和货物保持不变，油箱里的燃油减少了，燃烧产生的废气排出了车外。长途行驶消耗的燃油质量大于小鸟增加的质量，所以车带着小鸟第二次上磅时，整体仍比出发时更轻。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "两次称重之间，货车行驶并消耗了燃油，废气离开车辆。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "减少的燃油质量大于小鸟增加的质量，因此总读数下降。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "两台秤都准确，途中没有加油或改变货物。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "具体里程、车型、油耗和鸟的种类未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "开车时，什么会不断减少，却不算卸货？",
+    "注意油箱里的变化。",
+    "消耗的燃油比落在车顶的小鸟更重。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "日常",
+    "科学",
+    "反直觉"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Engineer Toast / Paul Rowe",
+    "url": "https://puzzling.stackexchange.com/questions/10000/a-semi-truck-weighing-exactly-10-000-pounds",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《A semi truck weighing exactly 10,000 pounds》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

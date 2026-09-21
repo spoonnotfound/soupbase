@@ -1,0 +1,47 @@
+{
+  "id": "curated-crooked-parking",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "一夜之间停歪的车",
+  "surface": "周一早晨，我把车停进一排排列整齐的车里，和前后车辆完全对齐。晚上我搭同事的车回家。\n周二回来时，我的车还在原位，却明显斜跨着两个停车位；其他车都停得很规矩。没人碰过我的车，停车线也没重画。为什么？",
+  "solution": "周一早晨地面被积雪覆盖，看不见停车位的线，先到的人随意排出了一列，后来的我也跟着停。过了一天，积雪融化，其他车辆离开后，新来的车都按露出的标线停放。只有我的车一直没动，于是原先看起来整齐的位置显得歪斜、占了两个车位。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "周一积雪盖住了停车标线，车辆是按彼此位置而非标线排齐的。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "雪融后其他车重新按标线停放，未移动的这辆车才显出跨位。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "车的位置和地面标线在两天之间都没有改变。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "具体天气温度、车型和谁最先停歪未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "车没动，地面上能看见的东西可能变了。",
+    "周一大家是照着线停，还是照着彼此停？",
+    "第一天积雪遮住了线，第二天雪化了。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "日常",
+    "观察",
+    "环境"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / Tom",
+    "url": "https://puzzling.stackexchange.com/questions/105855/explain-this-bad-parking-job",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Explain this bad parking job》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

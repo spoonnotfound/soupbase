@@ -1,0 +1,47 @@
+{
+  "id": "curated-missing-islands",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "少了六座岛",
+  "surface": "飞行员在黎明飞过一片海域，数到 17 座裸露的岩石小岛。\n一周后，她在同样时段沿同样航线飞过，只数到 11 座。高度、视野和天气都差不多，她没有漏数。\n没有施工、地震或侵蚀，岩石也没有移动。六座岛去哪了？",
+  "solution": "第一次经过时潮位较低，较矮的岩石露出水面，也被数作小岛。第二次恰好遇到较高的潮位，其中六块低矮岩石被海水淹没，露出水面的只剩十一座。黎明是相近时段，不代表每次的潮位相同；岩石没有消失，只是不再露出水面。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "两次飞越时当地潮位不同，第一次较低，第二次较高。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "六块低矮岩石在第二次被水淹没，因此不再表现为露出海面的岛。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "视线无遮挡，岩石本身的位置和大小没有改变。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "海域名称、具体潮位与当地完整潮汐周期未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "岛没有移动，海面会不会移动？",
+    "同样是黎明，就一定是同样的水位吗？",
+    "第二次潮位更高，淹没了六块较矮的岩石。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "自然",
+    "观察",
+    "温和"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / Weather Vane",
+    "url": "https://puzzling.stackexchange.com/questions/106050/why-did-the-number-of-islands-change",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Why did the number of islands change?》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "curated-grounded-pilot-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Unhurt Pilot",
+  "surface": "A pilot is controlling a plane when it hits a tree and breaks apart. The pilot never jumps out, leaves the operating position or uses protective equipment, yet suffers no scratch. It is a real aircraft, not a game or recording. How?",
+  "solution": "It is a radio-controlled model aircraft. Its operator has been standing on the ground with the transmitter the whole time. The model crashes, but nobody is aboard it.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The aircraft is a real flying radio-controlled model.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Its operator remains on the ground and is never inside it.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "This is not a simulator, special effect or recorded scene.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The model’s dimensions, price and operator’s age are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Must a pilot sit inside the aircraft being controlled?",
+    "A real aircraft need not be full-size.",
+    "The operator stands on the ground holding a transmitter."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Classic",
+    "Perspective",
+    "Gentle"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "stackzebra / Saeïdryl",
+    "url": "https://puzzling.stackexchange.com/questions/64907/how-did-the-pilot-survive-the-crash",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “How did the pilot survive the crash?”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

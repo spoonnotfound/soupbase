@@ -1,0 +1,54 @@
+{
+  "id": "curated-haunted-review-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "A One-Star Spirit Sword",
+  "surface": "[Fantasy] A woman thinks her changed husband is possessed and buys a spirit-banishing wooden sword. Over the next few days she weakens, while he stays the same. She throws it away and leaves a bad review. The seller visits, banishes a spirit with that very sword, and she removes the review. The sword was never broken. What went wrong?",
+  "solution": "Both spouses had been possessed without realizing it. Sacred beads first freed the husband, whose return to normal looked wrong to his still-possessed wife. The sword then weakened the spirit inside her, not her already-cured husband. Mistaking this for failure, she discarded it. The visiting seller identified the real remaining host and freed her.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The husband had already been freed by sacred beads; his still-possessed wife misread his recovery as possession.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The sword worked on the wife’s spirit all along, and the seller ultimately freed her.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Weakness is part of the fictional supernatural mechanism, not a real medical diagnosis.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "The husband neither changed identity nor sabotaged the sword.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Names, the spirit’s origin and the price are unspecified."
+  ],
+  "character_claims": [
+    "The wife claims her husband is possessed. This is her mistaken diagnosis, not an established fact."
+  ],
+  "hints": [
+    "Is the wife’s diagnosis an established fact?",
+    "Who actually changes while the sword is present?",
+    "The husband is already free; the wife is the remaining possessed person."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Fantasy",
+    "Misunderstanding",
+    "Layered twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "瑞颜（RuiYanRY）",
+    "url": "https://ltda.wikidot.com/soup-580",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “聊斋 · 道士消评记”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

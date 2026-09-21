@@ -1,0 +1,47 @@
+{
+  "id": "curated-unfading-rose-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "A Promise That Would Not Wilt",
+  "surface": "During her final illness, she asks me to keep living well after she is gone. I bring a potted rose and say, “When this flower fades, I will stop thinking of you.” She touches it without arguing. Later I find a note in the pot: “You have left yourself a forever.” Why did she write that?",
+  "solution": "The rose is plastic and will not naturally wilt like a living flower. I chose it to express that I would always remember her. Touching it, she recognized the material and understood the promise, then left the note before she died. There is nothing supernatural, and remembering her does not prevent continuing to live well.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The rose is plastic and will not naturally wilt.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "She recognized it while alive, understood the promise of remembrance and left the note in advance.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The note was not written after death; nothing supernatural occurred.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The illness, ages and later life are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Must a flower in a pot be alive?",
+    "What could she learn by touching the rose?",
+    "The rose is made of plastic and will not naturally fade away like a cut flower."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Emotion",
+    "Gentle",
+    "Details"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Alice in Reality（YimiQ）",
+    "url": "https://ltda.wikidot.com/soup-727",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “这是献给你的最后一朵花”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

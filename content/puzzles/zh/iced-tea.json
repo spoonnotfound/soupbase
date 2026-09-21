@@ -1,0 +1,53 @@
+{
+  "id": "curated-iced-tea",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "喝得更快的人",
+  "surface": "两位朋友点了相同的冰茶。甲接连喝完几杯，每次续杯都是刚做好的；乙只点一杯，慢慢地喝。\n乙后来中毒身亡，甲却平安无事。检查发现，两人喝过的每一杯里原本都有毒物。\n他们没有交换饮料，也没有人事先服过解药。为什么？",
+  "solution": "毒物被冻在冰块里，茶水本身没有加毒。甲每次拿到新做的冰茶就很快喝完，只喝液体，冰块留在杯里。按这道虚构谜题的设定，冰尚未融化到让他喝下致命量。乙长时间慢饮同一杯，冰逐渐融化，毒物进入茶水，最终导致中毒死亡。关键是每杯在手中停留的时间以及冰块是否融化，不是喝下的茶总量，也不是甲有抗毒能力。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "毒物在冰块中，而非起初的茶水中。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "甲快速喝完每杯新茶并留下冰块；乙慢饮同一杯，让冰融化、毒物进入茶水并致命。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "甲没有吞食或嚼碎冰块；每次续杯均为新做，并非几杯一起提前放好。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "两人未换杯、未用解药，也没有以特殊体质解释结果。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "具体毒物、剂量、投毒者和动机没有设定；所需机制仅按虚构故事给定。",
+    "饮料品牌、杯数和餐厅地点不是关键设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "别只比较喝下的总量，也比较每杯放了多久。",
+    "一杯饮料里，可能有不属于液体本身的东西。",
+    "杯中的冰会随时间融化；喝完茶不等于吃掉冰。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "经典",
+    "悬疑",
+    "时间差"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "generalcrispy / Bozman / Alex Vermillion / Aggie Kidd / Mr Pie",
+    "url": "https://puzzling.stackexchange.com/questions/2980/poisoned-iced-tea",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Poisoned Iced Tea》。原文许可：CC BY-SA 3.0 / 4.0（按投稿与修订时间）；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整改编说明见内容许可文件。"
+  }
+}

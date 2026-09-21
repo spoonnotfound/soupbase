@@ -1,0 +1,47 @@
+{
+  "id": "curated-roman-dress-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "L Is Too Big, XL Fits",
+  "surface": "A woman tries a dress labeled L and finds it too large. The assistant brings the same style labeled XL, which fits perfectly. Neither dress has been altered and neither label is wrong. Why?",
+  "solution": "The Roman-themed shop uses Roman numerals for its numeric sizes, not the usual letter-size abbreviations. L means 50 and XL means 40. The second dress is therefore smaller, not extra-large.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The labels are Roman numerals, not ordinary letter-size abbreviations.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "L is 50 and XL is 40, so the XL-labeled dress is smaller.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Both dresses share the same style and numeric sizing system; both labels are correct.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The shop name, country and other sizes are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Must a letter-shaped label abbreviate an English word?",
+    "These symbols also appear on traditional clock faces.",
+    "Read Roman numerals: L is 50, XL is 40."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Symbols",
+    "Everyday",
+    "Twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "dr_ / Auribouros",
+    "url": "https://puzzling.stackexchange.com/questions/115944/strange-shopping",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Strange shopping”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

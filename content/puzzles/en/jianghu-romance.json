@@ -1,0 +1,55 @@
+{
+  "id": "curated-jianghu-romance-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "A Jianghu Romance",
+  "surface": "A swordsman fell in love with a thief. They duelled, travelled the martial world together and held a grand wedding.\nOne day he asked to meet her. Instead of refusing, she talked about her grandfather in the mountains and asked for help.\nAfter hearing what she wanted him to do, he ended their relationship and returned to his adventures alone. Why?",
+  "solution": "They met in an online martial-arts game. The adventures, character roles and wedding were all in the game; he was now asking to meet in person. She told him her grandfather had raised her and needed help selling tea, then asked him to buy some. He thought this emotional sales pitch looked like a scam, blocked her and kept playing on his own. No grandfather had forbidden a real marriage. The story does not establish whether her grandfather or the tea actually existed.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The romance and wedding took place in an online game; he was proposing an offline meeting.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "She asked him to buy tea to help her grandfather, making him suspect a scam and block her.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "He continued the game alone after ending the online relationship.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "There was no grandfather intervening to forbid a marriage.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Her real identity, the existence of her grandfather and tea, and whether she was actually a scammer are unverified.",
+    "The game title and their ages are unspecified."
+  ],
+  "character_claims": [
+    "She claims a grandfather in the mountains raised her and needs help selling tea. These claims are not independently verified."
+  ],
+  "hints": [
+    "Where did their adventures and wedding take place?",
+    "Why ask to meet after already holding a wedding?",
+    "Her story about her grandfather ended with a request to buy something."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Comedy",
+    "Twist",
+    "Everyday"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "五仁瓜子",
+    "url": "https://ltda.wikidot.com/soup-018",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “情断江湖”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

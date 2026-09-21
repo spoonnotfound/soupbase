@@ -1,0 +1,46 @@
+{
+  "id": "curated-empty-elevator",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "送走的空电梯",
+  "surface": "男人在公寓大厅叫来一部电梯，进去后按了二楼，立刻又走出来，看着空电梯上行。\n随后他再次按下大厅的呼梯键，才顺利回到了高层的家。他不是恶作剧，也没有替别人叫电梯。为什么？",
+  "solution": "几部电梯共用大厅的呼梯键。第一部电梯的门禁读卡器坏了，只能去不需要刷卡的公共低层，无法送他到住宅楼层。如果它一直停在大厅，再按呼梯键仍会打开它。他把它送往二楼，自己留下，再叫来另一部读卡器正常的电梯，刷卡回家。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "第一部电梯的门禁读卡器故障，只能去公共低层，无法前往他家所在的住宅楼层。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "几部电梯共用呼梯键，他先送走故障电梯，才可以叫来另一部正常电梯。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "电梯的行驶和开门功能正常，男人的门禁卡也正常。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定公寓名称和具体住宅楼层。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "“电梯能动”和“能到他家”是两回事。",
+    "大厅的同一个按钮控制不止一部电梯。",
+    "低层不必刷卡，高层需要；第一部电梯读不了他的卡。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "日常",
+    "反常行为"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Gabriel Burns / user21939",
+    "url": "https://puzzling.stackexchange.com/questions/35609/the-empty-elevator",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《The Empty Elevator》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

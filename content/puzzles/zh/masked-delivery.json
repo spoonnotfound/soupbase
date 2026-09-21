@@ -1,0 +1,47 @@
+{
+  "id": "curated-masked-delivery",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "蒙面人抱走了孩子",
+  "surface": "几个戴着面罩的人围住一位女人，其中一人拿着刀。过了一会儿，他们抱走了她的孩子。\n女人的伴侣一直在场，却没有阻止；后来这对伴侣还付了钱，向这些人道谢。为什么？",
+  "solution": "女人正在接受事先同意的剖宫产手术。戴面罩的是医护人员，刀是手术器械，孩子是刚出生的婴儿。医护人员把婴儿抱去做出生后的检查与照护，随后交回家人。伴侣在场陪产，付的是医疗费用，道谢是因为母婴得到了照顾。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "这是一次经同意的剖宫产，戴面罩持刀的人是医护人员。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "被抱走的是刚出生、接受检查照护的婴儿，并非遭到绑架。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "伴侣在场陪产，婴儿检查后交回家人，钱是医疗费用。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "具体医院、费用和手术细节未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "戴面罩和拿刀，也可能是某种工作的必要装备。",
+    "孩子在这件事开始以前，处于什么状态？",
+    "这是新生命出生时的一次手术。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "视角",
+    "温和",
+    "反转"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "jamesdlin / DooplissForce",
+    "url": "https://puzzling.stackexchange.com/questions/38599/masked-strangers-take-baby-at-knifepoint",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Masked strangers take baby at knifepoint》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

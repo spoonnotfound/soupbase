@@ -1,0 +1,47 @@
+{
+  "id": "curated-roman-dress",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "L 太大，XL 正好",
+  "surface": "女士在一家服装店试裙子，标签写着 L 的那条太大。\n店员给她换了同款 XL，她一试却正合身。两条裙子都没有改过，标签也没有贴错。为什么？",
+  "solution": "这是一家罗马主题服装店，标签用的是罗马数字尺码，而不是常见的大号、加大号。L 表示 50，XL 表示 40，因此第二条实际上小一号段，合身并不矛盾。题目中的两个标签形似字母尺码，实际表达的是数字。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "店里的尺码使用罗马数字，不是通常的字母尺码。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "L 表示 50，XL 表示 40，所以 XL 这条实际更小。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "两条裙子属于同款、同一套数字尺码体系，标签正确。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "店名、国家和其他尺码未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "标签看起来像字母，就一定是在表示英文单词吗？",
+    "这些符号也常出现在古典钟面上。",
+    "用罗马数字读：L 是 50，XL 是 40。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "符号",
+    "日常",
+    "反转"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "dr_ / Auribouros",
+    "url": "https://puzzling.stackexchange.com/questions/115944/strange-shopping",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Strange shopping》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

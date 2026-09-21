@@ -1,0 +1,52 @@
+{
+  "id": "curated-lucky-prophet",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "连续猜中的陌生邮件",
+  "surface": "陌生人连续三周给我发邮件，提前预测三场尚未进行的比赛胜负，三次都对。每封邮件只有一个明确预测，时间也无法造假。\n他并不能控制比赛，不会预知未来，也没什么分析本领，却并不意外会有像我这样的收件人。为什么？",
+  "solution": "收到邮件的不止我。第一周，他给不同人发送相反的预测；结果出来后，只继续联系收到正确预测的那一组。第二周、第三周同样分组，只把下一次邮件发给此前全中的人。像我这样的少数收件人因此看到三连中，而收到错误预测的人早已不再收到邮件。他筛选的是收件人，不是准确预测未来。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "他向不同收件人发送相反的预测，覆盖比赛的两个可能胜负结果。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "每次只继续联系此前收到正确预测的人，留下的少数人便看到连续命中。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "故事中的比赛没有平局，邮件确实在比赛前发出。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "他没有向同一收件人在同一轮发送两个相反预测。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "比赛项目、收件人总数和后续交易未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "你看到的三封邮件，等于他发出的全部邮件吗？",
+    "收到错误预测的人，后来是否还会收到邮件？",
+    "他每轮只留下猜中的那一半收件人。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "悬疑",
+    "反直觉",
+    "信息差"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Chess960 / Stratos",
+    "url": "https://puzzling.stackexchange.com/questions/97732/predicting-the-future",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Predicting the future?》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

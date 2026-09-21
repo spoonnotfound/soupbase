@@ -1,0 +1,47 @@
+{
+  "id": "curated-absent-object-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Object Before the Answer",
+  "surface": "A leaves the room while I choose an object and B remembers it. When A returns, B asks a series of questions. In three rounds the lists are:\n“Cup? Piano? Keys?”\n“Spoon? Vase? Iceberg? Watch?”\n“Chair? Plate? Cup? Bed? Coin?”\nA says yes only to the last item each time, always correctly. The everyday objects are present, but there is no piano, iceberg or bed. A neither sees nor overhears my choices. How does the trick work?",
+  "solution": "A and B have agreed on a verbal marker: an object that is absent from the room. B asks about some present objects, then names an absent one, then immediately names the chosen target. Piano, iceberg and bed are the markers; keys, watch and coin follow them. A recognizes the signal rather than reading anyone’s mind.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "They have agreed to use an absent object as a verbal marker.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The item immediately after that marker is the chosen object and receives the yes answer.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "There is no eavesdropping, electronic communication or signal based on tone, color or gestures.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Their identities and other furnishings are unspecified; piano, iceberg and bed are definitely absent."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Compare the item immediately before each correct answer.",
+    "Are those three preceding objects actually in the room?",
+    "Naming an absent object signals that the next item is the target."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Code",
+    "Interactive",
+    "Reasoning"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Donbhupi / Rand al'Thor",
+    "url": "https://puzzling.stackexchange.com/questions/9827/reading-minds-can-be-easy",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Reading minds can be easy”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

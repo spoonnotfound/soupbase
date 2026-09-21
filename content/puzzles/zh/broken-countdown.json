@@ -1,0 +1,47 @@
+{
+  "id": "curated-broken-countdown",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "倒数为什么从 5 跳到 6",
+  "surface": "一个每秒减一的倒计时牌，使用由七条发光线段拼出的数字。\n我先看见 5，一秒后却变成 6。再过一秒，只剩最上面一横和右下方一竖亮着。\n计时程序没倒着运行，也没重置，是什么出了问题？",
+  "solution": "显示器右上方那条线段坏了。真正依次显示的是 9、8、7。9 缺少右上段，看起来就是 5；8 缺少右上段，看起来就是 6；7 原本由上横、右上竖和右下竖组成，坏掉右上竖后，就只剩题目描述的两段。倒计时正常，出错的是显示。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "七段显示器的右上方线段不亮。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "真实倒数为 9、8、7，缺失同一线段后分别呈现 5、6 和最后的两段残形。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "其余六条线段正常，显示的是个位数。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "设备用途、损坏原因与维修过程未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "同一条发光线段，可能在每个数字里都缺席。",
+    "把 5 和 6 各补上同一条线，会得到什么？",
+    "右上段熄灭，让 9 看成 5、8 看成 6，随后 7 只剩两段。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "观察",
+    "数字",
+    "推理"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Mike Ball / ColdFrog",
+    "url": "https://puzzling.stackexchange.com/questions/46990/the-broken-crosswalk-timer",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《The broken crosswalk timer》。原文许可：CC BY-SA 4.0 / CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

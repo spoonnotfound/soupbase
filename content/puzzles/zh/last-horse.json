@@ -1,0 +1,47 @@
+{
+  "id": "curated-last-horse",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "越慢越好的赛马",
+  "surface": "两位骑手各带自己的马参赛。规则是：两匹马都到终点后，谁的马后到，谁拿奖金。\n他们一开始都磨磨蹭蹭。裁判说了一句话，两人立刻翻身上马，拼命向终点冲去。规则没变，他们也没约好平分奖金。裁判说了什么？",
+  "solution": "裁判建议他们交换坐骑。奖金仍按各自原来拥有的马判定，并没有交换马的所有权。换骑后，自己骑的是对方的马，让它越早到终点，就越有利于自己的马成为后到的一匹。因此两人都开始全速骑行。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "裁判让两人交换骑乘对方的马，但马的所有权和奖励规则不变。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "每个人都希望胯下属于对方的马先到，让自己拥有的马后到而获奖。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "比赛要求两匹马都完成路线，不允许靠不出发或不完赛获胜。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "奖金数额、马的品种和最终胜者未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "获奖依据是骑手到达顺序，还是马的到达顺序？",
+    "骑在一匹马上，不等于拥有这匹马。",
+    "换骑对方的马，就有理由让胯下的马尽快到终点。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "策略",
+    "经典",
+    "反直觉"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Umur Kontacı / Rohinb97",
+    "url": "https://puzzling.stackexchange.com/questions/3839/race-of-patience-for-the-sake-of-love",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Race of patience for the sake of love》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

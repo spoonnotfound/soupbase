@@ -1,0 +1,47 @@
+{
+  "id": "curated-undamaged-armor",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "给没有弹孔的地方加固",
+  "surface": "一支航空队检查所有返航飞机，发现机翼上弹孔很多，发动机附近几乎没有。\n有人提议重点加固机翼，工程师却要求优先保护弹孔最少的区域。他不是看错了统计表。为什么？",
+  "solution": "统计表只包含活着返航的飞机。机翼中弹后仍可能飞回来，因此这些弹孔有机会被统计。发动机等要害中弹的飞机往往无法返航，恰好从样本里消失了。在这个虚构情景中，各部位都有中弹机会，工程师据此判断：返航飞机很少带着某处的伤回来，可能说明那里的伤更致命，应优先保护。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "统计只包括返航飞机，不包括被击落或失踪的飞机。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "要害中弹的飞机难以返航，所以幸存飞机上弹孔少的区域反而可能最需要保护。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "这是虚构的统计分析情景，各部位都有遭到攻击的机会。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定真实战争、人物和精确中弹概率。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "这张表没有统计哪些飞机？",
+    "能看到弹孔，首先说明那架飞机回来了。",
+    "某处几乎没有留下弹孔，也可能是因为被击中那里的飞机回不来。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "反直觉",
+    "观察",
+    "推理"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Chuck / M Oehm",
+    "url": "https://puzzling.stackexchange.com/questions/57058/save-our-wwii-planes",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Save our WWII planes》。原文许可：CC BY-SA 4.0 / CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

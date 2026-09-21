@@ -1,0 +1,47 @@
+{
+  "id": "curated-broken-taillight",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "砸了车灯却获救",
+  "surface": "男人故意弄坏了一辆正在行驶的车的尾灯。警方拦下车后，先把他放了出来，随后带走了驾驶员。\n他没有修理资格，也不是执法人员，更没有得到车主同意。为什么他不但没被当场抓走，反而获救了？",
+  "solution": "他是被绑架后关在后备厢里的受害者，驾驶员就是绑匪。他从里面弄坏尾灯，希望异常引起外界注意。巡警因尾灯异常拦车检查，继而发现被困的人并将他救出，控制驾驶员。损坏尾灯是逃离危险时发出的求救信号。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "弄坏尾灯的人是被关在后备厢中的受害者，驾驶员是绑匪。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "尾灯异常使巡警拦车并发现受害者，因此救人并控制驾驶员。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "故事只描述现场救援，不讨论后续财产赔偿或司法结论。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "绑架动机、车型和具体弄坏车灯的方法未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "“把他放了出来”说明他原本在哪里？",
+    "他能接触尾灯，但不一定在车外。",
+    "他被关在后备厢里，破坏尾灯是为了引来救援。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "悬疑",
+    "反转",
+    "动机"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FumbleFingers / Beastly Gerbil",
+    "url": "https://puzzling.stackexchange.com/questions/45170/why-didnt-they-arrest-bob",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Why didn't they arrest Bob?》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "curated-copied-chess-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Eight Points Without Chess Skill",
+  "surface": "Someone who can identify chess pieces but knows no strategy plays eight experts at once: four games as White and four as Black. There are no clocks, and opponents wait while he moves between boards. A win earns two points, a draw one, a loss zero. Without helpers or devices, how can he guarantee at least eight points?",
+  "solution": "He pairs each game in which he is White with one in which he is Black. He copies the expert’s White move from the latter board onto the former, then copies that expert’s Black reply back. Each pair of experts effectively plays each other. A decisive result gives him one win and one loss; a draw gives him two draws. Either way he earns two points per pair, eight altogether.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "He pairs opposite-color games and relays each expert’s moves to the other board.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Each pair gives him two points regardless of its result, yielding eight points across four pairs.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "All games start from the usual position, and he can correctly copy moves without clock pressure.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The experts, moves and individual results are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Could the opponents supply the chess skill for one another?",
+    "Pair one game as White with one as Black.",
+    "Relay their moves so each pair of experts effectively plays each other."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Strategy",
+    "Classic",
+    "Twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "user3453281 / singletee",
+    "url": "https://puzzling.stackexchange.com/questions/8722/houdini-versus-the-chess-masters",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Houdini versus the chess masters”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "curated-snow-license-plate-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "A Signature in the Snow",
+  "surface": "Someone piles snow across a driveway and drives away. There are no cameras or witnesses. The homeowner examines the snowbank where the vehicle’s rear touched it and supplies information that identifies the vehicle. What was there?",
+  "solution": "The vehicle had an embossed rear license plate. Backing against firm snow pressed a mirror image of its raised characters into the bank. The homeowner read the reversed imprint and obtained the plate number. This identifies a vehicle, not necessarily the person who drove it.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "An embossed rear plate left a mirrored number imprint in firm snow.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Reading the imprint supplied the vehicle’s registration number.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The imprint remained intact and visible.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "The number alone did not establish the driver’s identity.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The actual number, vehicle model and driver are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "What else at the rear could touch snow besides the tires?",
+    "Some identifying characters are raised rather than printed flat.",
+    "The snow holds a mirror image of an embossed license plate."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Mystery",
+    "Observation",
+    "Everyday"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / msh210",
+    "url": "https://puzzling.stackexchange.com/questions/87953/the-case-of-the-pranking-snowplow",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “The case of the pranking snowplow”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

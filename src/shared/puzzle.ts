@@ -41,6 +41,7 @@ export const puzzleSchema = z
     source: z.strictObject({
       kind: z.enum(["original", "adapted", "licensed"]),
       author: text(100),
+      license: z.enum(["CC0-1.0", "CC-BY-SA-3.0", "CC-BY-SA-4.0"]).optional(),
       url: z
         .string()
         .max(1000)

@@ -1,0 +1,52 @@
+{
+  "id": "curated-return-trams-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Longer Wait Home",
+  "surface": "I leave for work and home at irregular times, without checking a timetable. Every usable tram line runs reliably every ten minutes in both directions. There are no crowds, delays or last-service issues. Over time I wait much less at the stop going to work than coming home. Why?",
+  "solution": "Two lines share the stop by my home, with arrivals offset by five minutes, and either serves my workplace. Near work they use separate, equally distant stops that cannot be watched together. In the morning I board whichever line comes first at the shared stop. Returning, I must commit to one stop and its single ten-minute service. Random arrivals therefore yield a shorter average morning wait.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "Two staggered lines share the home stop, and either can be taken toward work.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "At work the lines use separate stops, so the traveler must choose only one service to wait for.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Each line runs every ten minutes, offset by five at home; the work stops are equally distant and mutually invisible.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "No real-time arrival information is available and departure times have no fixed relation to the timetable.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The city, fares and travel time are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Is one line’s frequency the same as all usable arrivals at a stop?",
+    "Routes can share a stop at one end and separate at the other.",
+    "At home both lines can be awaited together; at work only one can be chosen."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Transport",
+    "Space",
+    "Counterintuitive"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Swiss Frank / konvas",
+    "url": "https://puzzling.stackexchange.com/questions/71488/mysterious-trams",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Mysterious Trams”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

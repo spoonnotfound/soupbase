@@ -1,0 +1,47 @@
+{
+  "id": "curated-vanishing-weight",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "几秒钟的减重",
+  "surface": "一个人站在秤上，按了墙上的按钮。门关上后，他没有移动双脚，秤的读数却突然下降。\n几秒后，读数又恢复了。他没有脱衣服，也没有拿起或放下任何东西。发生了什么？",
+  "solution": "秤放在电梯里。他按下较低楼层的按钮，电梯关门后开始向下加速。加速时秤对他的支持力减小，因此显示的读数下降。电梯随后匀速下降，读数就恢复正常。他身体的质量没有在几秒内减少；改变的是秤所测到的力。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "秤放在电梯中，按钮使电梯开始向下运行。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "向下加速时秤的读数暂时减小，匀速后恢复；身体质量没有减少。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "秤工作正常，故事描述的是启动阶段，不是到站减速阶段。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定人的体重、电梯速度和读数减少的具体数值。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "人没挪脚，不代表他所在的房间没移动。",
+    "按钮和自动关上的门属于同一套设备。",
+    "向下启动的电梯，会让秤短暂显示得更轻。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "观察",
+    "日常",
+    "科学"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Quark-epoch / Quintec",
+    "url": "https://puzzling.stackexchange.com/questions/72865/mysterious-loss-of-weight",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Mysterious loss of weight》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "curated-broken-taillight-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Broken Light That Saved Him",
+  "surface": "A man deliberately damages the taillight of a moving car. Police stop it, let him out and take the driver away. He is neither a mechanic nor an officer and has no permission from the owner. Why is he rescued instead of being immediately taken away?",
+  "solution": "He is a kidnapping victim trapped in the trunk; the driver is his captor. Damaging the taillight from inside is an attempt to draw attention. A patrol stops the car over the faulty light, discovers the trapped victim and frees him, then detains the driver.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The man is a kidnapping victim locked in the trunk, and the driver is his captor.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The damaged light prompts a stop that reveals the victim and leads to his rescue.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The story concerns the immediate rescue, not later compensation or a court verdict.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The motive, car model and exact method of damaging the light are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "What does “let him out” imply about his original position?",
+    "He can reach a rear light without being outside the car.",
+    "He is trapped in the trunk and trying to attract help."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Mystery",
+    "Twist",
+    "Motive"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FumbleFingers / Beastly Gerbil",
+    "url": "https://puzzling.stackexchange.com/questions/45170/why-didnt-they-arrest-bob",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Why didn't they arrest Bob?”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "curated-lucky-prophet-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Three Perfect Predictions",
+  "surface": "For three weeks a stranger emails me the winner of an upcoming contest. All three predictions are correct. Each email makes one definite claim and its advance timestamp is genuine. The sender cannot control results, foresee the future or analyze contests well, yet expects some recipients like me. Why?",
+  "solution": "The sender contacts many people with opposing predictions. After each result, only those who received the correct prediction are contacted again, split between opposite predictions for the next contest. A shrinking group sees an unbroken winning streak, while everyone who saw a failure disappears from the follow-up audience. The sender is selecting recipients, not predicting perfectly.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "Different recipient groups get opposing predictions covering both possible outcomes.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Only recipients whose earlier predictions were correct continue receiving later messages.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "These fictional contests have no draws and the emails genuinely precede the results.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "Each recipient receives only one prediction per round.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The sport, audience size and any later transaction are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Are your three emails the only ones that were sent?",
+    "What happens to people who received a wrong prediction?",
+    "Each round keeps only the recipients who saw a correct answer."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Mystery",
+    "Counterintuitive",
+    "Information"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Chess960 / Stratos",
+    "url": "https://puzzling.stackexchange.com/questions/97732/predicting-the-future",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Predicting the future?”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "curated-unsaid-address-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Address Never Given",
+  "surface": "Police contact a man for the first time: “We found your wife’s body outside town. Please come…” He hangs up in a hurry and soon arrives at the remote scene. Seeing him there makes an officer suspicious. Why?",
+  "solution": "He ended the call before receiving an address or directions. He had no location message, news report or other source of directions, yet came straight to the correct place. This suggests prior knowledge of the scene. It justifies further questions, not an automatic conclusion that he committed murder.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "He hung up before police supplied the location.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Despite receiving no other location information, he arrived correctly, suggesting prior knowledge.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "He did not follow a police vehicle or call back for directions.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "The puzzle explains suspicion, not a final verdict.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The actual killer, cause of death and investigation outcome are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "What had the call actually told him?",
+    "He has a reason to go, but does he have enough information to arrive?",
+    "How did he find a remote scene without its address?"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Mystery",
+    "Details",
+    "Reasoning"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Aggie Kidd / A.D.",
+    "url": "https://puzzling.stackexchange.com/questions/16460/how-did-the-police-know",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “How did the police know?”. Source license: CC BY-SA 4.0 / CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

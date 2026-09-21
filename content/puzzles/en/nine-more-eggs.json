@@ -1,0 +1,47 @@
+{
+  "id": "curated-nine-more-eggs-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "One Egg, Then Nine More",
+  "surface": "A tourist asks a shopkeeper for one egg. Once it is brought out, he points and says, “Nine more like that, please.” He always intended to buy ten and knew the total price. There are no purchase limits, discounts or quality concerns. Why split the request?",
+  "solution": "He speaks little of the local language. He knows the singular word for egg but has forgotten its irregular plural. Asking for one first lets him point and use a phrase equivalent to “nine more like that,” avoiding the troublesome noun.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "He knows the local singular word for egg but not its irregular plural.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Pointing to one egg and saying “more like that” avoids having to use the plural noun.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "He wanted ten throughout, and the shop permits a single order of ten.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The country, language and actual word forms are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Perhaps the obstacle is asking, not buying.",
+    "What word does “like that” replace?",
+    "He can name one egg but cannot remember how to name several."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Comedy",
+    "Language",
+    "Everyday"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "vsz / Aethon",
+    "url": "https://puzzling.stackexchange.com/questions/30339/a-strange-way-of-buying-eggs",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “A strange way of buying eggs”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

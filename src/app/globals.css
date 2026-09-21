@@ -1040,6 +1040,19 @@ summary {
   margin-top: 16px;
 }
 
+.puzzle-source {
+  margin-top: 24px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.puzzle-source > summary {
+  cursor: pointer;
+}
+.puzzle-source p {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
 .model-trace {
   margin-top: 16px;
   min-width: 0;

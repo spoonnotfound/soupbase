@@ -1,0 +1,52 @@
+{
+  "id": "curated-four-generations",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "谁偷吃了那块寿司",
+  "surface": "三位母亲带着各自唯一的女儿聚餐，没有其他人在场。饭前，所有人闭眼说祝福，每一对母女各伸一只手相握，始终没有松开或换手。\n结束后，盘里少了一块寿司，确定是其中一人用手拿走的。最年轻的孩子知道不是自己，想了一下，就看向桌上最年长的人。她为什么能确定？",
+  "solution": "在这次聚餐中，母亲和女儿的身份互相重叠：同桌的是曾外祖母、外祖母、母亲和女儿，共四代四个人。中间两人各牵着自己的母亲和女儿，两只手都被占着；只有最年长和最年轻的两人各有一只空手。最年轻的孩子知道自己没拿，因此能确定寿司由最年长者拿走。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "三对母女由同一条四代关系构成，实际是四个人，不是六个。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "中间两人双手被牵住，只有两端有空手；最年轻者排除自己后，剩下最年长者。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "寿司由在场者用空手拿走，没有外人、松手、换手或用嘴取食。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "盘子在所有人空手都能够到的位置。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "姓名、年龄、祝福内容和偷吃动机未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "一个人能不能同时是某人的母亲和另一个人的女儿？",
+    "把同桌人的母女关系画成一条链，数一数每人的手。",
+    "四代人相牵，中间两人的双手都占着；最小者排除自己，只剩最年长者。"
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "关系",
+    "推理",
+    "日常"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "TTT / Dan Russell",
+    "url": "https://puzzling.stackexchange.com/questions/38681/the-missing-piece-of-sushi",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《The missing piece of sushi》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

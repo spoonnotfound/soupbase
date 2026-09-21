@@ -1,0 +1,47 @@
+{
+  "id": "curated-half-bottle-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Half Full Without a Scale",
+  "surface": "A transparent bottle is narrow at the top and wide below, with no volume scale. Without pouring, weighing or measuring it, a woman marks the water level, seals the bottle and turns it upside down. After the water settles, one look proves it is exactly half full. What does she see?",
+  "solution": "The settled water surface meets the same marked cross-section of the bottle. Upright, water occupies one side of that section; inverted, it occupies the other. The water volume has not changed, so the two regions have equal capacity. An irregular bottle shape does not matter.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "Both settled water surfaces correspond to the same marked cross-section of the bottle.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The same volume fills opposite sides after inversion, proving each is half the bottle’s capacity.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The sealed bottle neither leaks nor changes shape.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Its material, capacity and exact dimensions are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "What becomes of the region originally occupied by air?",
+    "Compare the water surfaces against the same physical mark.",
+    "Equal volumes occupy opposite sides of the marked cross-section."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Observation",
+    "Space",
+    "Science"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Akanksha / JMP",
+    "url": "https://puzzling.stackexchange.com/questions/87398/half-filled-water-bottle",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Half filled water bottle”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

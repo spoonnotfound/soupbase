@@ -59,6 +59,8 @@ BYOK 请求会经过部署者服务器，服务器能读取 Key；开源并不�
 
 题目统一存放在 `content/puzzles/zh/` 和 `content/puzzles/en/`，一题一个 JSON。每个文件包含固定的 `id` 和 `src/shared/puzzle.ts` 定义的题目字段。新增题目时添加文件，再执行下面的校验和同步命令；修改题目时保留原有 `id`，已有游戏继续使用原来的题目版本。
 
+当前内置 50 个独立故事，每个故事都有中英文版本，共 100 个 JSON：14 道入门、25 道标准、11 道进阶。2026-09-21 首批新增 8 道，随后扩充 39 道；精选改编题附三档提示、核心还原要点、来源署名与许可。见[50 题扩充记录](docs/curation-2026-09-22-50.md)和[首批筛选记录](docs/curation-2026-09-21.md)。
+
 ```sh
 npm run content:check
 npm run content:sync
@@ -82,4 +84,4 @@ npm run build
 
 ## 许可
 
-代码采用 [MIT](LICENSE)。内置原创题目采用 [CC0 1.0](content/LICENSE.md)；用户私有创作的题目不适用此许可。
+代码采用 [MIT](LICENSE)。3 个原创示例采用 CC0 1.0；47 个精选改编故事及其翻译采用 CC BY-SA 4.0，保留原作署名与来源。逐题许可见[内容许可](content/LICENSE.md)，也可在游戏内展开“来源与许可”。这些许可不自动适用于用户私有创作。

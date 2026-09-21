@@ -1,0 +1,52 @@
+{
+  "id": "curated-hotel-bankruptcy",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "推车到旅馆",
+  "surface": "他用手把车往前推，停在一家旅馆前。\n没有撞坏任何东西，也没有进去住过，他却发现自己已经破产。旁边的人看着这一幕，一点也不惊讶。为什么？",
+  "solution": "他正在和别人玩大富翁一类的地产棋盘游戏。“车”是他的棋子，“旅馆”是别人地块上的游戏建筑。棋子停到这一格后，他必须付租金，而游戏中的钱和可变卖资产不足以支付，因此在游戏中破产。旁边的人是其他玩家，清楚这些规则。没有真实汽车被推到现实中的旅馆，也没有现实财产损失。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "车是地产棋盘游戏中的棋子，旅馆是棋盘上的建筑。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "落在对方有旅馆的地块上需要付租金，而他的游戏资产不足以支付，所以在游戏中破产。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "旁边的人是同局玩家，破产依据游戏规则。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "不是车坏了、撞坏旅馆或欠真实住宿费。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "不要求具体游戏版本、棋盘地名、掷出的点数或租金数额。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "先确认车和旅馆的大小。",
+    "“用手推”和“旁边的人不惊讶”符合一种桌面活动。",
+    "在地产棋盘游戏里，走到别人的旅馆格子会发生什么？"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "经典",
+    "轻松",
+    "场景反转"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "jkl3699 / NL628 / puzzledPig",
+    "url": "https://puzzling.stackexchange.com/questions/64056/why-is-he-bankrupt",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Why is he bankrupt?》。原文许可：CC BY-SA 3.0 / 4.0（按投稿与修订时间）；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整改编说明见内容许可文件。"
+  }
+}

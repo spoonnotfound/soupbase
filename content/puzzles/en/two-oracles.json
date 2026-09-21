@@ -1,0 +1,47 @@
+{
+  "id": "curated-two-oracles-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "One Gift, Two Prophets",
+  "surface": "[Fantasy] A prophetic gift forces its user to state every benefit and drawback of an event whenever speaking. An ancient practitioner loses clients who dislike hearing bad news. A modern user obeys the same rule and never lies, yet becomes the favorite “clear thinker” of two opposing audiences. What changes?",
+  "solution": "The modern user records complete predictions, honestly saying both sides. Only afterward are the recordings edited: positive portions go to one account and negative portions to another. The shared identity is concealed. Different audiences follow their preferred account and mistake a selection for the full view. The speaking rule remains intact; distribution changes.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "Complete predictions are recorded before positive and negative portions are separated by editing.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Two seemingly separate accounts show different portions to different audiences.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "This is a fictional audience scenario, not a universal claim about platform recommendation systems.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The platform, predictions and account names are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Does the rule control what is said or what an audience eventually hears?",
+    "What can happen to a recording after the speech is complete?",
+    "Two accounts each publish only one side of the same complete prediction."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Fantasy",
+    "Modern life",
+    "Perspective"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "瑞颜（RuiYanRY）",
+    "url": "https://ltda.wikidot.com/soup-583",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “聊斋 · 卜算”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "curated-bestselling-poster-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Bestselling Poster",
+  "surface": "An unknown singer’s posters cost less than the programme, yet nobody bought them.\nAt a concert his mother volunteered to hand out food. She then quietly removed some supplies and bought out one kind of item at the venue’s only shop.\nSoon the posters were selling fast, although he had not gained a single fan. Why?",
+  "solution": "His mother wanted to boost his poster sales. She tampered with the food so that people urgently needed the toilet, removed the toilet paper and bought all the tissues and similar supplies at the venue’s only shop. The affected buyers had no usable tissues with them. They bought the singer’s posters as emergency toilet paper because they were cheaper than the programmes and other available paper. They also had no attachment to his picture. The singer was pleased but did not know what his mother had done. This is a fictional dark comedy.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The mother makes the audience need the toilet through the food, then removes toilet paper and buys the available tissues.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "People buy the cheap posters as emergency toilet paper, not because they like the singer.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The mother intends to boost sales; the singer does not know about her scheme.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "She buys the wiping supplies, not all the posters.",
+      "required": false
+    },
+    {
+      "id": "f5",
+      "text": "There is only one shop selling tissues at the venue, and the buyers have none available on them.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "No substance, dose, audience size or real-world person is specified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "A product can sell for a use its maker never intended.",
+    "After eating, where might the audience urgently need to go, and what would they need there?",
+    "The usual wiping supplies are gone; the posters are the cheapest available paper."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Dark comedy",
+    "Twist",
+    "Mischief"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "张承（Zhangcheng10）",
+    "url": "https://ltda.wikidot.com/soup-556",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “为爱而窃”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

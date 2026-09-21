@@ -1,0 +1,47 @@
+{
+  "id": "curated-winter-car",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "冬天烫，夏天凉",
+  "surface": "同一辆车，停在同一个有固定遮挡的车位，车头方向也相同。\n一个晴朗夏日下午，我回来时车内还算凉；一个晴朗冬日下午，同一时间回来，车内却晒得很热。\n车窗都关着，没人开空调，周围建筑没有变化。为什么？",
+  "solution": "固定遮挡是一段上方伸出的屋檐。夏天太阳较高，光线被屋檐挡住，车处于阴影里；冬天太阳位置较低，阳光从屋檐下斜照进车窗，使封闭车厢升温。这是故事设定的当地气候和两个晴天下的比较，不是冬天的所有车都比夏天热。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "上方固定屋檐能挡住较高角度的夏季阳光。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "较低角度的冬季阳光从檐下直射车内，使该次停车后的车厢更热。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "比较发生在北半球适合这一情形的地点，停车方向和遮挡不变。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "城市、气温、屋檐尺寸和车内具体温度未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "建筑没变，太阳的位置会不会变？",
+    "上方的遮挡，对高处和低处射来的光效果相同吗？",
+    "夏季高角度阳光被屋檐挡住，冬季低角度阳光从檐下照进车窗。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "日常",
+    "观察",
+    "空间"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "dotancohen / GentlePurpleRain",
+    "url": "https://puzzling.stackexchange.com/questions/24120/car-hotter-in-winter",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Car hotter in winter》。原文许可：CC BY-SA 4.0 / CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

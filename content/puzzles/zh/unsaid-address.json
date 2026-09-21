@@ -1,0 +1,52 @@
+{
+  "id": "curated-unsaid-address",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "没说出口的地址",
+  "surface": "警方第一次联系一名男子：“我们在城外发现了你妻子的遗体，请你来一下……”\n男子急忙挂断电话，很快赶到了那处偏僻现场。警员看到他，反而开始怀疑他。为什么？",
+  "solution": "电话里还没有说出现场的地址或路线，男子就挂断了。他也没有从其他人、定位信息或新闻中得知地点，却径直到了正确现场。因此警方怀疑他在接到电话前就知道那里发生过什么。这是进一步调查的线索，不足以单独证明他杀了人。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "警方尚未告知现场位置，男子就挂了电话。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "没有其他定位信息的男子却准确到达现场，因此暴露出可能事先知道地点。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "他没有通过跟踪警车或事后回拨电话找到现场。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "故事只解释警方为何产生怀疑，不认定最终罪责。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "男子是否真是凶手、死因和后续调查结果未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "挂电话时，男子已经知道哪些信息？",
+    "他缺少的不是出发的理由，而是到达的条件。",
+    "警方还没告诉他地址，他怎么会找到那处偏僻地点？"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "悬疑",
+    "细节",
+    "推理"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Aggie Kidd / A.D.",
+    "url": "https://puzzling.stackexchange.com/questions/16460/how-did-the-police-know",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《How did the police know?》。原文许可：CC BY-SA 4.0 / CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

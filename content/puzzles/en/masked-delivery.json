@@ -1,0 +1,47 @@
+{
+  "id": "curated-masked-delivery-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Masked People and the Baby",
+  "surface": "Masked people gather around a woman. One holds a blade. Soon they carry her child away. Her partner watches without intervening; afterward the couple pays these people and thanks them. Why?",
+  "solution": "She is undergoing a cesarean birth she consented to. The masked people are medical staff and the blade is a surgical instrument. They carry the newborn aside for checks and care, then return the baby to the family. Her partner is there for support, and the payment is a medical bill.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "This is a consensual cesarean birth performed by masked medical staff.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The newborn is taken for routine care and checks, not kidnapped.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The baby is returned to the family; the partner is present for support and the payment is a medical fee.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The hospital, fee and procedural details are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Masks and blades can be ordinary professional equipment.",
+    "Where was the child before the scene began?",
+    "A new baby is being delivered by surgery."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Perspective",
+    "Gentle",
+    "Twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "jamesdlin / DooplissForce",
+    "url": "https://puzzling.stackexchange.com/questions/38599/masked-strangers-take-baby-at-knifepoint",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Masked strangers take baby at knifepoint”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

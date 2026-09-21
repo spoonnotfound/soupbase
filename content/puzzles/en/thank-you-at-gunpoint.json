@@ -1,0 +1,52 @@
+{
+  "id": "curated-thank-you-at-gunpoint-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Thank You at Gunpoint",
+  "surface": "A man entered a bar and asked for water. After watching him for a moment, the bartender suddenly pointed a gun at him.\nNobody fired. The man paused, sincerely said “Thank you” and left without drinking. He was neither thanking the bartender under pressure nor fleeing. Why?",
+  "solution": "The man had hiccups and wanted water to relieve them. The bartender recognised the problem and deliberately startled him by raising the gun. In this story the fright stopped the hiccups. His reason for asking for water was gone, so he genuinely thanked the bartender and left. The bartender did not intend to shoot, and this was not a robbery or a staged performance.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The man wants water to relieve his hiccups.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The bartender intentionally startles him; his hiccups stop, removing his need for water and causing his sincere thanks.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "No shot, injury, robbery or planned performance takes place.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "His thanks are for solving the problem, not an attempt to calm an attacker.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Whether the gun is loaded, the man’s identity and the bar’s location are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "He may not be thirsty.",
+    "A minor physical problem has disappeared by the time he leaves.",
+    "In the story, a sudden fright stops a repeated involuntary sound."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Classic",
+    "Counterintuitive",
+    "Light mystery"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "SteamCode / Welz",
+    "url": "https://puzzling.stackexchange.com/questions/64047/why-use-the-gun",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Why use the gun?”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

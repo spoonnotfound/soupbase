@@ -1,0 +1,47 @@
+{
+  "id": "curated-bedtime-stairs",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "晚饭后的十层楼",
+  "surface": "旅馆里的这家人住在十楼。白天出入，他们总是乘电梯；晚饭后回房间，却每天一起走楼梯。\n电梯没有停运，他们也不怕拥挤。父母并不喜欢爬楼，但这几天终于能早点睡了。为什么？",
+  "solution": "孩子们晚饭后总是精力旺盛，回到房间还会长时间玩闹，让父母难以休息。这家人发现，在他们自己的这次旅途中，晚饭后慢慢走楼梯回房间，孩子会消耗些精力，到房间后更快安静下来。父母愿意多走路，是为了让孩子早点入睡，并非电梯出了问题。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "孩子们晚饭后精力旺盛，原本会在房间里玩闹很久。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "这家人用爬楼消耗孩子的精力，让他们回房间后更快入睡。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "全家能够正常走楼梯，这只是该家庭在故事中的选择。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定孩子年龄或一般性的育儿效果。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "谁在晚饭后最不想睡觉？",
+    "父母不喜欢爬楼，却喜欢爬完楼后的结果。",
+    "走楼梯消耗了孩子的精力。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "日常",
+    "温和",
+    "动机"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "cpj / LowIntHighCha",
+    "url": "https://puzzling.stackexchange.com/questions/31772/my-strange-hotel-room-neighbours",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《My strange hotel room neighbours》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

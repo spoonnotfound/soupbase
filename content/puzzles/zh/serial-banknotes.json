@@ -1,0 +1,47 @@
+{
+  "id": "curated-serial-banknotes",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "一秒数清的钱",
+  "surface": "我把一叠刚取出的同面额新钞交给朋友，里面恰好有 41 张。\n他没有逐张翻数，没有用机器，也没有问我，只看了最上面和最下面两张，就准确说出了张数。他怎么做到的？",
+  "solution": "这叠新钞的序列号连续，而且按编号顺序叠好，中间没有缺号。朋友查看首尾两张的编号，发现数字部分相差 40，所以连同首尾共 41 张。他算的是连续编号的数量，不是在瞬间辨认每一张纸币。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "新钞的序列号连续、顺序排列，中间没有缺号。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "首尾编号相差 40，朋友用末号减首号再加一，得到 41 张。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "纸币面额相同，编号前缀也相同。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定币种和实际编号。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "为什么强调这是新钞？",
+    "纸币上除了面额，还有一组每张不同的信息。",
+    "如果首尾号码连续相差 40，中间连同两端一共有多少张？"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "观察",
+    "日常",
+    "数字"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "BrettFromLA / Spencerkatty",
+    "url": "https://puzzling.stackexchange.com/questions/48674/how-did-he-count-my-money-so-fast",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《How did he count my money so fast?》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

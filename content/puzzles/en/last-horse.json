@@ -1,0 +1,47 @@
+{
+  "id": "curated-last-horse-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Race to Finish Last",
+  "surface": "Two riders enter their own horses in a race. Once both horses finish, the owner of the later horse wins the prize. Initially both riders dawdle. A judge says one sentence, and they mount up and race flat out. The rules are unchanged and they have not agreed to split the prize. What was said?",
+  "solution": "The judge tells them to swap mounts. Ownership remains unchanged. Each now rides the opponent’s horse and wants it to finish first, making their own horse the later finisher. Their incentives now favor riding as fast as possible.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "They swap mounts without changing ownership or the prize rule.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Each rushes the opponent’s horse to the finish so their own horse can arrive later and win.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Both horses must finish; refusing to complete the course cannot earn the prize.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The prize amount, breeds and eventual winner are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Is the prize tied to the rider or to the horse’s owner?",
+    "Riding a horse need not mean owning it.",
+    "Ride the opponent’s horse, and finishing first helps your own horse finish last."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Strategy",
+    "Classic",
+    "Counterintuitive"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Umur Kontacı / Rohinb97",
+    "url": "https://puzzling.stackexchange.com/questions/3839/race-of-patience-for-the-sake-of-love",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Race of patience for the sake of love”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

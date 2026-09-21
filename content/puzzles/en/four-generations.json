@@ -1,0 +1,52 @@
+{
+  "id": "curated-four-generations-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Who Took the Sushi?",
+  "surface": "Three mothers dine with their only daughters, with nobody else present. They close their eyes to say good wishes, each mother and daughter joining one hand. Nobody lets go or changes hands. A piece of sushi disappears, taken by someone’s free hand. The youngest knows she did not take it and quickly looks at the eldest. Why can she tell?",
+  "solution": "At this meal the roles overlap: four generations sit together—great-grandmother, grandmother, mother and daughter. Each middle person holds both her mother’s and daughter’s hands, leaving no free hand. Only the eldest and youngest have a free hand. The youngest rules herself out, leaving the eldest.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The three mother-daughter pairs overlap in a single four-generation family chain of four people.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The middle two have both hands occupied; of the two free-handed endpoints, the youngest knows it was not her.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "An attendee took the piece by hand; there were no outsiders, released hands, changed grips or mouth-only actions.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "The plate is within reach of anyone with a free hand.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Names, ages, words spoken and the motive for taking the sushi are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Can someone be both a mother and another attendee’s daughter?",
+    "Draw the family links and count occupied hands.",
+    "The middle two hold two hands each; only the oldest and youngest have a free one."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Relationships",
+    "Reasoning",
+    "Everyday"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "TTT / Dan Russell",
+    "url": "https://puzzling.stackexchange.com/questions/38681/the-missing-piece-of-sushi",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “The missing piece of sushi”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "curated-head-turn-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Permission to Turn Your Head",
+  "surface": "[Fantasy; Chinese wordplay] Ghosts may live disguised as humans, but need a human’s explicit permission to reveal their true form. During a driving lesson conducted in Chinese, a student asks about a road sign. The instructor explains it. The student says thanks, transforms, and terrifies the instructor. What instruction was misunderstood?",
+  "solution": "The student is a ghost whose head can detach. The instructor says “允许掉头” (a U-turn is allowed). The normal driving phrase 掉头 means to turn around, but its characters can be read literally as “drop head.” The ghost treats this as permission to detach its head. The instructor intended only a driving explanation and did not know the student was a ghost.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The student is a head-detaching ghost who requires permission to reveal that form.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The Chinese U-turn phrase 掉头 is taken literally as permission to drop or detach the head.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The ghost harms nobody; the misunderstanding depends specifically on Chinese wording.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The student’s age, location and ghost history are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "The Chinese phrase combines a driving action with a body part.",
+    "Its everyday driving meaning differs from a literal reading of its characters.",
+    "掉头 means a U-turn in traffic but can be read literally as “drop head.”"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Fantasy",
+    "Comedy",
+    "Chinese wordplay"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "￡9.15",
+    "url": "https://ltda.wikidot.com/soup-915",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “头等大事”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

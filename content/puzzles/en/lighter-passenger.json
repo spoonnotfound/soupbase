@@ -1,0 +1,47 @@
+{
+  "id": "curated-lighter-passenger-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "An Extra Passenger, a Lighter Truck",
+  "surface": "A truck is weighed before setting off. After a long drive, a small bird lands on its roof and rides across another accurate weighbridge. The second reading is lower. The driver and cargo are unchanged, and nobody threw anything out. Why?",
+  "solution": "The engine consumed fuel during the journey and released exhaust. The mass of fuel used exceeds the bird’s added mass. Although the cargo and driver remain, the truck and its new passenger together weigh less than at departure.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The truck consumed fuel between weighings and released exhaust.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The fuel mass lost exceeds the bird’s added mass, reducing the total.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Both scales are accurate, and there was no refueling or cargo change.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The distance, vehicle, fuel consumption and bird species are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "What steadily decreases while driving without being unloaded as cargo?",
+    "Think about the fuel tank.",
+    "The consumed fuel weighs more than the bird."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Everyday",
+    "Science",
+    "Counterintuitive"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Engineer Toast / Paul Rowe",
+    "url": "https://puzzling.stackexchange.com/questions/10000/a-semi-truck-weighing-exactly-10-000-pounds",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “A semi truck weighing exactly 10,000 pounds”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

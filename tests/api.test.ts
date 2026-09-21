@@ -73,6 +73,7 @@ vi.mock("ai", () => ({
 import { handle } from "../src/server/api";
 import { query, sql } from "../src/server/db";
 import { hostDecision } from "../src/server/model";
+import { readCatalog } from "../scripts/catalog";
 import doorbell from "../content/puzzles/zh/doorbell.json";
 const { id: _puzzleId, ...puzzleContent } = doorbell;
 const origin = "http://localhost:3100";
@@ -121,11 +122,29 @@ describe("resource access and gameplay", () => {
   it("exposes only public puzzle fields", async () => {
     const r = await player.request("puzzles");
     expect(r.status).toBe(200);
-    expect(r.data).toHaveLength(6);
-    const text = JSON.stringify(r.data);
-    expect(text).not.toContain("solution");
-    expect(text).not.toContain("facts");
-    expect(text).not.toContain('hints"');
+    const catalog = await readCatalog();
+    expect(r.data.map((p: { id: string }) => p.id).sort()).toEqual(
+      catalog.map((p) => p.id).sort(),
+    );
+    for (const puzzle of r.data) {
+      expect(Object.keys(puzzle).sort()).toEqual(
+        [
+          "id",
+          "revision",
+          "visibility",
+          "title",
+          "surface",
+          "language",
+          "difficulty",
+          "tags",
+          "source",
+          "hintTotal",
+        ].sort(),
+      );
+      const entry = catalog.find((p) => p.id === puzzle.id)!;
+      expect(puzzle.source).toEqual(entry.puzzle.source);
+      expect(JSON.stringify(puzzle)).not.toContain(entry.puzzle.solution);
+    }
   });
   it("creates privately and refuses permission fields", async () => {
     const bad = await author.request("puzzles", "POST", {

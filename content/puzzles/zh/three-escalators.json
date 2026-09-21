@@ -1,0 +1,47 @@
+{
+  "id": "curated-three-escalators",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "两下只一上",
+  "surface": "一座高架车站每天上站台和下站台的人数差不多，三个并排的扶梯速度也一样。\n车站却长期开两部向下、一部向上。它没有在赶乘客走，也不是其中一部故障。为什么这样安排？",
+  "solution": "进站乘客从不同地方陆续到达，通常比较分散；出站乘客则在一列车到站后同时涌向扶梯。虽然全天两方向总人数相近，向下的人流会出现更大的短时高峰。车站因此安排两部下行扶梯，帮助一整批下车乘客较快离开站台，一部上行扶梯服务陆续到达的人。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "进站乘客陆续到达，出站乘客随列车到站成批出现。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "两部下行扶梯是为分散出站的短时高峰，而不是因为全天出站人数更多。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "站台位于地面上方，三部扶梯速度相同且工作正常。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "车站名称、列车班次和各地车站的一般设计规则未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "一天的总人数相同，每一分钟也一定相同吗？",
+    "列车到站的一瞬间，哪个方向的人会突然变多？",
+    "进站是陆续来的，出站是一整批来的。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "日常",
+    "反直觉",
+    "观察"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / 2012rcampion",
+    "url": "https://puzzling.stackexchange.com/questions/86301/three-subway-escalators",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Three Subway Escalators》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

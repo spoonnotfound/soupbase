@@ -1,0 +1,47 @@
+{
+  "id": "curated-crooked-parking-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Crooked Overnight",
+  "surface": "On Monday I park neatly in line with the surrounding cars, then ride home with a colleague. On Tuesday my car is still in exactly the same spot, but it now sits crookedly across two bays. All the other cars are properly parked. Nobody moved my car or repainted the lines. Why?",
+  "solution": "Snow hid the bay markings on Monday. Early arrivals formed their own row, and I aligned my car with theirs. The snow later melted. After the other cars left, new arrivals followed the exposed markings. My unmoved car was left conspicuously straddling bays.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "Snow hid the markings on Monday, so cars aligned with each other instead.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "After the snow melted, replacement cars followed the markings while this car stayed in place.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Neither this car nor the painted markings changed position.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The exact temperature, car model and first badly parked driver are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "The car stayed put; what became visible on the ground?",
+    "Were Monday’s drivers following lines or one another?",
+    "Snow hid the markings on the first day and melted before the second."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Everyday",
+    "Observation",
+    "Environment"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / Tom",
+    "url": "https://puzzling.stackexchange.com/questions/105855/explain-this-bad-parking-job",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Explain this bad parking job”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

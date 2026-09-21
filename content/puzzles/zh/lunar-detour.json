@@ -1,0 +1,52 @@
+{
+  "id": "curated-lunar-detour",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "睡过头却正好到站",
+  "surface": "【科幻】未来，我从阿姆斯特朗镇去奥尔德林城，沿平坦公路一直向东，正常两小时就到。\n我只给自动驾驶车输入了“保持速度，向东”，打算到站后手动停车，却睡着了。九小时后醒来，目的地的穹顶恰好又在前方。\n车没有故障、停车、掉头或减速。为什么没有越开越远？",
+  "solution": "我住在月球，走的是环绕赤道的一整圈公路。两个小时后，车第一次经过目的地，但我睡着了，没有手动停车。按这个未来故事里设定的车速，绕月球一圈再回到同一点需要七小时，所以出发九小时后，车第二次来到目的地。阿姆斯特朗、奥尔德林和穹顶城市是月球背景的线索。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "路线是在月球赤道上环绕一圈的公路，并非无限延伸的直路。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "车辆两小时后首次经过目的地，又用七小时绕行一圈，九小时后再次到达。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "车辆只执行方向和速度命令，不会到达目的地后自动停止。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "高速环月交通属于本故事的未来设定。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "车速具体数值、能源和城市建设细节未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "从阿姆斯特朗、奥尔德林和穹顶，你能猜到居住地吗？",
+    "一直向东，有没有可能最后回到原处？",
+    "这是月球上的环形公路；两小时到一次，再绕七小时又到了。"
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "科幻",
+    "空间",
+    "时间"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "sam / Daniel Mathias",
+    "url": "https://puzzling.stackexchange.com/questions/97368/a-timely-late-arrival-in-the-future",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《A timely late arrival in The Future》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

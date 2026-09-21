@@ -1,0 +1,54 @@
+{
+  "id": "curated-embrace-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Embrace",
+  "surface": "He crossed a line he should not have crossed. She came against the entire crowd. Their “embrace” jolted me awake.\nAt the fork ahead, someone else suddenly stopped to wait. In my panic, I gave him an “embrace” too.\nWhy did nobody find these encounters heartwarming?",
+  "solution": "These were traffic collisions. One driver changed lanes across a solid line while another drove the wrong way; their cars collided. The noise woke the narrator, who was driving while drowsy. A different car ahead stopped abruptly after missing a motorway exit. The narrator panicked, pressed the accelerator instead of the brake and rear-ended it. Both “embraces” were crashes. The stopped driver was not waiting to greet anyone.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "An illegal lane change and a wrong-way driver cause the first collision, waking the drowsy narrator.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "A different car stops near an exit; the narrator presses the wrong pedal and hits it. Both embraces are car collisions.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The narrator is not part of the first two-car collision; the second collision involves a separate stopped car.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "The car ahead stops after missing an exit, not to wait for the narrator.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Injuries, speeds, vehicle models and the aftermath are unspecified."
+  ],
+  "character_claims": [
+    "“Stopped to wait” is the narrator’s figurative description, not the other driver’s actual intention."
+  ],
+  "hints": [
+    "Consider traffic meanings for crossing a line and moving against everyone else.",
+    "Both embraces are noisy collisions; the narrator is moving too.",
+    "One crash wakes a driver, who then hits a car stopped near an exit."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Metaphor",
+    "Accident",
+    "Multiple twists"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "朝夕（gnoh）",
+    "url": "https://ltda.wikidot.com/soup-021",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “拥抱”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

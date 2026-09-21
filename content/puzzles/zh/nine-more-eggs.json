@@ -1,0 +1,47 @@
+{
+  "id": "curated-nine-more-eggs",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "先买一颗，再买九颗",
+  "surface": "一个游客进店，先请店员拿一颗鸡蛋。等店员拿来后，他指着它说：“再来九个这样的。”\n他从一开始就想买十颗，也知道十颗的价格。没有限购、折扣或质量问题。为什么不一口气说完？",
+  "solution": "游客对当地语言不熟。他会说“一颗鸡蛋”，却忘了“鸡蛋”的不规则复数形式，不敢直接说十颗。他先让店员拿出一颗，再用自己会说的“九个这样的”来指代，就不用说出那个复数词了。绕的是表达方式，不是购买数量。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "游客会说当地语言中鸡蛋的单数，却忘了不规则复数。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "先拿一颗，再用“这样的”指代，能避开不会说的复数词。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "他始终需要十颗，店员也允许一次买十颗。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "具体国家、语言以及复数词的拼写未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "困难可能不在买，而在怎样开口。",
+    "“这样的”替代了哪个词？",
+    "他会说一颗鸡蛋，却不会说那个词的复数。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "喜剧",
+    "语言",
+    "日常"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "vsz / Aethon",
+    "url": "https://puzzling.stackexchange.com/questions/30339/a-strange-way-of-buying-eggs",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《A strange way of buying eggs》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

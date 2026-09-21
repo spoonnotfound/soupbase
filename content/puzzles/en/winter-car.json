@@ -1,0 +1,47 @@
+{
+  "id": "curated-winter-car-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Hotter on a Winter Afternoon",
+  "surface": "The same car is parked in the same partially sheltered space, facing the same way. On a sunny summer afternoon it stays fairly cool inside. On a sunny winter afternoon, at the same time, the cabin is sun-baked. Windows are shut, air conditioning is off and nearby structures are unchanged. Why?",
+  "solution": "An overhead building projection shades the car from the higher summer sun. The lower winter sun shines beneath it and directly through the windows, warming the enclosed cabin. This compares two suitable sunny days in the story’s location, not all winter and summer weather.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "An overhead projection blocks the higher-angle summer sunlight.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Lower-angle winter sunlight passes underneath and directly heats the cabin.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The setting is a suitable Northern Hemisphere location; orientation and shelter remain unchanged.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The city, temperatures and overhang dimensions are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "The building stays put; does the sun’s angle?",
+    "Does an overhead shelter block light arriving at every angle?",
+    "High summer sunlight is blocked, while low winter sunlight enters beneath the shelter."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Everyday",
+    "Observation",
+    "Space"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "dotancohen / GentlePurpleRain",
+    "url": "https://puzzling.stackexchange.com/questions/24120/car-hotter-in-winter",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Car hotter in winter”. Source license: CC BY-SA 4.0 / CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

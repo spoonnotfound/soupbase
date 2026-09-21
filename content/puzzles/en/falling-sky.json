@@ -1,0 +1,57 @@
+{
+  "id": "curated-falling-sky-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Before the Sky Fell",
+  "surface": "[Fantasy] Two islands lay across a deep gap from each other and traded by boat.\nA voice came from outside their world. One island rose overhead, but its boats fell. People still lived up there and had to haul goods on long ropes.\nThen a sterner voice spoke, and the sky fell. What happened?",
+  "solution": "This is a fantasy world a student has drawn across two notebook pages. The binding is the gap between the islands. Its people, boats and water can move within the world, but its land moves with the pages. When a classmate asks what the student is doing, the student lifts the left half of the notebook to hide the drawing. That island rises above the other, while boats and water fall; residents resort to ropes for transport. When the teacher speaks sharply, the student shuts the notebook. The left page comes down on the right: to the inhabitants, the sky has fallen.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The islands occupy opposite pages of a student’s notebook; the binding forms the gap in this imagined world.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "A classmate’s question makes the student raise half the notebook; the teacher’s question makes the student close it, bringing the sky down.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "People, boats and water can move inside the fantasy; the islands’ terrain follows the physical pages.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "Boats fall from the raised side while its inhabitants remain and use ropes to transport goods.",
+      "required": false
+    },
+    {
+      "id": "f5",
+      "text": "No real island rises and no real global catastrophe occurs.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The origin of the imagined world’s awareness, the student’s age and the inhabitants’ ultimate fate are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Outside actions affect this fantasy world.",
+    "Picture two joined flat surfaces: one can stand up or fold over the other.",
+    "How might a student hide a classroom drawing from a classmate, then from a teacher?"
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Fantasy",
+    "Space",
+    "Twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "妄想摘星辰（WXmirage）",
+    "url": "https://ltda.wikidot.com/soup-158",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “忧天”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

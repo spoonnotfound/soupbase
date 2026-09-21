@@ -1,0 +1,47 @@
+{
+  "id": "curated-rain-elevator",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "雨天直达十楼",
+  "surface": "一个住在十楼的人，每天出门都能乘电梯直达一楼。\n独自回家时，晴天通常只坐到五楼，再走楼梯；雨天却能直接坐到十楼。电梯一直运转正常，按钮也没有换过。为什么？",
+  "solution": "他身材矮小。老式电梯的楼层按钮竖着排列，他能按到一楼和五楼，够不到十楼。晴天独自回家时只能先坐到能按到的最高楼层。雨天他随身带着长柄雨伞，可以用伞尖按下十楼按钮。差异来自能否够到按钮，而不是电梯在晴天少停几层。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "他个子较矮，能按到一楼和五楼按钮，够不到位置更高的十楼按钮。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "雨天携带的长柄雨伞能帮助他按到十楼；晴天没有这个工具。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "没有其他乘客替他按按钮，也没有语音或无障碍呼梯设备。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定身高数值、年龄和职业。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "晴天和雨天，他带的东西有什么区别？",
+    "能乘到某一层，不一定代表能按到每一层的按钮。",
+    "雨天带着的一件长物品，延长了他的触及范围。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "经典",
+    "日常",
+    "反转"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Elgert / HumanlyRespectable",
+    "url": "https://puzzling.stackexchange.com/questions/2419/elevator-puzzle",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Elevator puzzle》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

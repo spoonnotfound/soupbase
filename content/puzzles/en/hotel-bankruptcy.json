@@ -1,0 +1,52 @@
+{
+  "id": "curated-hotel-bankruptcy-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Bankrupt at the Hotel",
+  "surface": "He pushed his car forward by hand and stopped at a hotel.\nHe had damaged nothing and had not stayed there, yet he realised he was bankrupt. The people beside him were unsurprised. Why?",
+  "solution": "They were playing a property-trading board game such as Monopoly. The car was his playing token, and the hotel was a building on another player’s property. Landing there required a rent payment greater than his remaining game money and saleable assets, making him bankrupt in the game. The other players knew the rules. No real car, real hotel stay or loss of real-world assets was involved.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The car is a token and the hotel is a building in a property-trading board game.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Landing on that property requires rent he cannot pay with his game assets, so he becomes bankrupt in the game.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The onlookers are fellow players familiar with the rules.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "No car breakdown, property damage or real lodging debt is involved.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The game edition, property name, dice roll and rent amount are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "How large are the car and hotel?",
+    "Pushing by hand and unsurprised onlookers fit a tabletop activity.",
+    "What happens when your token lands on someone else’s hotel in a property game?"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Classic",
+    "Lighthearted",
+    "Setting twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "jkl3699 / NL628 / puzzledPig",
+    "url": "https://puzzling.stackexchange.com/questions/64056/why-is-he-bankrupt",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Why is he bankrupt?”. Source license: CC BY-SA 3.0 / 4.0（按投稿与修订时间）; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

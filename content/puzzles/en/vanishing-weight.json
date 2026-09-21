@@ -1,0 +1,47 @@
+{
+  "id": "curated-vanishing-weight-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Lighter for a Few Seconds",
+  "surface": "Standing on a scale, someone presses a wall button. A door closes and the reading drops, although their feet do not move. A few seconds later it returns to normal. No clothes or other objects have been removed or added. What happened?",
+  "solution": "The scale is inside an elevator. The button sends it to a lower floor. During downward acceleration the supporting force measured by the scale decreases. Once the elevator moves at constant speed, the reading returns to normal. The person has not lost body mass.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The scale is inside an elevator starting a downward journey.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Downward acceleration temporarily reduces the measured support force; at constant speed the reading returns.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The scale works properly; the drop happens during departure, not braking at arrival.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The person’s mass, elevator speed and exact change in reading are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Their feet stay put, but does the room?",
+    "The wall button and closing door belong to the same device.",
+    "An elevator accelerating downward briefly makes the scale read less."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Observation",
+    "Everyday",
+    "Science"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Quark-epoch / Quintec",
+    "url": "https://puzzling.stackexchange.com/questions/72865/mysterious-loss-of-weight",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Mysterious loss of weight”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

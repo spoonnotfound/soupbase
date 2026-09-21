@@ -1,0 +1,52 @@
+{
+  "id": "curated-backup-soul-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Soul That Kept Coming Back",
+  "surface": "[Fantasy] The underworld takes a soul whose allotted life has ended and properly records its arrival. Days later it is back among the living. Another collection produces the same result. Identity and records are correct, and nobody opens an underworld exit. Watching a “repair” on Earth reveals the answer. What is repaired?",
+  "solution": "The soul inhabits a self-aware artificial intelligence on a computer. Once the soul is taken, the system loses its former awareness. Its owner assumes a malfunction and restores a complete consciousness backup onto a replacement computer. In this story’s explicit fantasy rules, restoration recalls the same soul from the underworld into the new carrier. Both collections and returns truly occur.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The soul inhabits a computer-based AI that loses its awareness when the soul is collected.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Restoring its complete consciousness backup to another computer recalls the same soul under this fantasy’s rules.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "This makes no claim about consciousness or souls in real AI.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "It is the same soul, not a second identity or an opened underworld gate.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The software, hardware and eventual underworld policy are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Must the soul’s earthly body be flesh?",
+    "What can be repaired by restoring a saved state?",
+    "Restoring an AI consciousness backup also recalls its soul in this fictional world."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Fantasy",
+    "Technology",
+    "Twist"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "瑞颜（RuiYanRY）",
+    "url": "https://ltda.wikidot.com/soup-578",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “聊斋 · 缉魂”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

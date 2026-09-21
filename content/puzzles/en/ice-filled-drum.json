@@ -1,0 +1,47 @@
+{
+  "id": "curated-ice-filled-drum-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Room in a Full Container",
+  "surface": "Water completely fills a rigid container, which I leave in a warm room. The next day none has been removed, leaked or evaporated, and the container has not expanded. Yet I can pour several more liters of water into it without overflowing. Why?",
+  "solution": "Initially the water is solid: one continuous mass of ice fills the container. When it melts, the same mass of liquid water occupies less volume, leaving space. The explanation is the change of state, not gaps between loose ice cubes or an expanding container.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The original water is a continuous mass of solid ice filling the container.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Melting reduces its occupied volume and leaves spare capacity without removing any water.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The container is sufficiently large and stays rigid; no leakage, evaporation or gaps between cubes explain the change.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The capacity, temperatures and exact added volume are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Does “water” specify its physical state?",
+    "Does unchanged mass always mean unchanged volume?",
+    "Solid ice takes up more space than the liquid produced when it melts."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Classic",
+    "Science",
+    "Wording"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "cst1992 / Matt",
+    "url": "https://puzzling.stackexchange.com/questions/31249/the-magical-water-drum",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “The magical water drum”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

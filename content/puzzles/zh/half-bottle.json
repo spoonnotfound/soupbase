@@ -1,0 +1,47 @@
+{
+  "id": "curated-half-bottle",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "不用刻度的半瓶水",
+  "surface": "透明瓶子上细下粗，没有容量刻度。一位女士没倒出水、没称重，也不知道瓶子的尺寸。\n她在水面处做了个记号，拧紧瓶盖，把瓶子倒过来，等水静止后看了一眼，就确定里面的水恰好占容积的一半。她看到了什么？",
+  "solution": "倒置后，静止的水面仍然经过瓶身上的同一个记号所在的截面。正放时该截面一侧装水，倒放时另一侧装水；水量始终不变，两侧的容积因此相等。瓶子的粗细并不均匀，也不妨碍这种比较。她看到的是两次水面在瓶身上对应同一截面，并不是只看水位高度的一半。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "倒置后静止水面仍对应瓶身同一标记截面。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "翻转前后水分别占据截面两侧而体积相同，因此水和空气各占总容积一半。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "瓶盖密闭且没有漏水，瓶子没有变形。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "瓶子的材质、具体容积和尺寸未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "瓶子翻转后，原来装空气的那一侧会发生什么？",
+    "关注两次水面是否对应瓶身上的同一截面。",
+    "同一截面两侧先后容纳相同的水量，说明两侧容积相等。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "观察",
+    "空间",
+    "科学"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Akanksha / JMP",
+    "url": "https://puzzling.stackexchange.com/questions/87398/half-filled-water-bottle",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Half filled water bottle》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

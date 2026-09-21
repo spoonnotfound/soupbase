@@ -1,0 +1,53 @@
+{
+  "id": "curated-iced-tea-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "The Faster Drinker",
+  "surface": "Two friends ordered the same iced tea. One quickly finished several glasses, with each refill freshly prepared. The other slowly drank just one.\nThe slow drinker died from poisoning; the fast drinker survived. Every glass had originally contained poison. Neither swapped drinks or took an antidote. Why?",
+  "solution": "The poison was frozen in the ice, not in the tea itself. The fast drinker finished each fresh glass quickly and left the ice behind. In this fictional puzzle, too little ice melted for that person to consume a lethal amount. The slow drinker kept the same glass long enough for the ice to melt and release the poison into the tea. Time and melting, not total volume or unusual immunity, explain the difference.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The poison is in the ice, not initially in the liquid tea.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The fast drinker leaves the ice in each fresh glass; the slow drinker lets it melt into the same glass and consumes a fatal amount.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The fast drinker does not eat the ice; refills are made individually, not left waiting together.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "There is no swapped drink, antidote or special immunity.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The poison, dose, culprit and motive are unspecified; the mechanism is a fictional premise.",
+    "Brand, exact number of glasses and venue are not essential."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Compare the time spent with each glass, not just the total amount consumed.",
+    "A drink can contain something besides its liquid.",
+    "Ice melts over time. Finishing the tea does not mean eating the ice."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Classic",
+    "Mystery",
+    "Timing"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "generalcrispy / Bozman / Alex Vermillion / Aggie Kidd / Mr Pie",
+    "url": "https://puzzling.stackexchange.com/questions/2980/poisoned-iced-tea",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Poisoned Iced Tea”. Source license: CC BY-SA 3.0 / 4.0（按投稿与修订时间）; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. See content/LICENSE.md for attribution and changes."
+  }
+}

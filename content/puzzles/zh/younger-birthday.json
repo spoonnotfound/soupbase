@@ -1,0 +1,47 @@
+{
+  "id": "curated-younger-birthday",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "妹妹先过三十岁生日",
+  "surface": "一对双胞胎在同一家医院出生，出生证上的年月日完全相同，哥哥先出生。\n三十年后的一次视频通话中，妹妹已经在庆祝三十岁生日，哥哥却说：“我这儿还没到生日呢。”\n两人的钟表和日历都没错，他们也没有提前庆祝。怎么回事？",
+  "solution": "长大后两人住在不同的时区。视频通话时，妹妹所在地已经过了午夜，进入出生日期所对应的那一天；哥哥所在地还停留在前一天。因此按各自当地日历，妹妹先开始庆生，但哥哥实际出生更早、始终更年长这一点没有改变。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "两人住在不同的时区，通话时当地日期不同。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "妹妹所在地先进入生日那天，哥哥所在地仍是前一天；这不改变出生先后。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "出生日期采用同一历法，没有闰日或历法切换。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "两人所在城市与具体时差未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "视频通话不要求两个人在同一座城市。",
+    "同一时刻，日历上的日期可以不同。",
+    "妹妹所在时区先过了午夜。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "日常",
+    "时间",
+    "视角"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "rybo111 / Jafe",
+    "url": "https://puzzling.stackexchange.com/questions/82003/sallys-older-brother",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Sally's older brother》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

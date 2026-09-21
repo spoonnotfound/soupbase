@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import type { Game, PublicPuzzle, PuzzleInput } from "@/shared/puzzle";
 import { Confidence } from "./confidence";
 import { ModelTrace } from "./model-trace";
+import { PuzzleSource } from "./puzzle-source";
 type Config = {
   mode: string;
   model: string;
@@ -701,6 +702,11 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                         ))}
                     </div>
                   </details>
+                  <PuzzleSource
+                    key={selected.id}
+                    source={selected.source}
+                    en={en}
+                  />
                 </div>
                 {(!game || game.status === "active") && (
                   <div className="game-dock">

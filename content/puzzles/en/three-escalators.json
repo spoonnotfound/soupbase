@@ -1,0 +1,47 @@
+{
+  "id": "curated-three-escalators-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Two Down, One Up",
+  "surface": "An elevated station has three parallel escalators of equal speed. Similar numbers of passengers go up and down each day, yet two escalators normally go down and only one goes up. None is broken, and the station is not trying to discourage entry. Why?",
+  "solution": "Entering passengers tend to arrive individually over time. Exiting passengers arrive at the escalators in a batch when a train unloads. Equal daily totals can therefore produce very different short-term peaks. Two downward escalators clear the concentrated exit flow, while one handles the dispersed arrivals.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "Entries are spread over time, while exits arrive in batches from trains.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Extra downward capacity serves a short-term peak rather than a larger daily total.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The platform is above street level and all three escalators work normally.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The station, timetable and any universal station-design rule are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Do equal daily totals imply equal numbers each minute?",
+    "Which direction suddenly gets busy when a train arrives?",
+    "Passengers enter gradually but leave in batches."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Everyday",
+    "Counterintuitive",
+    "Observation"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / 2012rcampion",
+    "url": "https://puzzling.stackexchange.com/questions/86301/three-subway-escalators",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Three Subway Escalators”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

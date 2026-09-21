@@ -1,0 +1,52 @@
+{
+  "id": "curated-snow-license-plate",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "雪堆里的签名",
+  "surface": "有人把一大堆雪推到别人家门口，随后驾车逃走。现场没有监控，也没有目击者。\n屋主只查看了车尾碰过的那面雪墙，就提供了一组信息，让调查人员找到了那辆车。他看见了什么？",
+  "solution": "车倒退时，车尾的凸字号牌压到了雪墙，在较紧实的雪上留下了一串镜像压痕。屋主把这串压痕反着辨认，读出了车牌号码。它能帮助找到车辆，但是否由车主本人驾驶，还需要另行调查。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "车尾的凸字号牌曾压入雪墙，留下镜像的号码痕迹。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "屋主辨认出压痕中的车牌号，据此提供车辆身份线索。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "雪足够紧实，号码压痕没有被新的降雪破坏。",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "没有仅凭号码就确定驾驶者身份。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "车牌号码、车型和实际驾驶者未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "车尾除了轮胎，还可能让什么碰到雪？",
+    "有些号码不是平面印刷，而是凸起的。",
+    "雪墙上留下了车牌号码的镜像压痕。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "悬疑",
+    "观察",
+    "日常"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "FlanMan / msh210",
+    "url": "https://puzzling.stackexchange.com/questions/87953/the-case-of-the-pranking-snowplow",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《The case of the pranking snowplow》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

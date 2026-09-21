@@ -1,0 +1,52 @@
+{
+  "id": "curated-lunar-detour-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Oversleeping into a Timely Arrival",
+  "surface": "[Science fiction] In the future, Armstrong Town is two hours west of Aldrin City along a level road. I tell my car only to maintain speed and head east, planning to stop it manually. I fall asleep. Nine hours after departure, I wake to find the destination’s dome ahead again. The car never failed, stopped, turned around or slowed down. Why?",
+  "solution": "These settlements are on the Moon, joined by a road circling its equator. The car first passed the destination after two hours, but I was asleep and never stopped it. At the story’s futuristic speed, one complete lunar circuit takes seven more hours. Thus at hour nine it reaches the destination again. The names and domes hint at the lunar setting.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The road circles the Moon’s equator instead of continuing indefinitely away from the destination.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "The car passes the city at hour two and returns after a seven-hour full circuit, at hour nine.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "Only speed and direction were entered; the car does not stop at a destination automatically.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "The high-speed lunar road is a fictional future technology.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The numeric speed, energy system and city construction are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "What setting do Armstrong, Aldrin and city domes suggest?",
+    "Could traveling continually east bring you back?",
+    "Two hours reach the city; a seven-hour circuit of the Moon brings the car there again."
+  ],
+  "difficulty": "hard",
+  "tags": [
+    "Science fiction",
+    "Space",
+    "Time"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "sam / Daniel Mathias",
+    "url": "https://puzzling.stackexchange.com/questions/97368/a-timely-late-arrival-in-the-future",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “A timely late arrival in The Future”. Source license: CC BY-SA 4.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

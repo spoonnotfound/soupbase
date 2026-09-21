@@ -1,0 +1,52 @@
+{
+  "id": "curated-ghost-paywall-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Thirty Seconds of Exorcism",
+  "surface": "[Fantasy] An exorcist has driven away spirits with a particular sound for decades. This time the spirits begin retreating, but after exactly thirty seconds the sound stops and they return. After investigating, the exorcist retires: “The spell still works. Every job would lose money now.” Why?",
+  "solution": "The effective spell is played from a recording on a phone. Its fictional provider has introduced a thirty-second preview limit, which the exorcist overlooked. Playback stops before the ritual finishes. Licensing the full recording for paid exorcisms would cost more than the work earns, so retirement makes financial sense. The recording, provider and terms are fictional.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "A newly imposed thirty-second preview limit cuts off the phone’s effective spell recording.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "Using the full recording commercially would cost more than the exorcist earns per job.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The spell genuinely works in this fantasy; the phone has power and connectivity.",
+      "required": false
+    },
+    {
+      "id": "f4",
+      "text": "No usable alternative recording or live performance is available to this exorcist.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The provider, spell and exact fees are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Is the sound produced by a person or a device?",
+    "Why exactly thirty seconds?",
+    "A preview ends; paying for the full commercial use would make the work unprofitable."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Fantasy",
+    "Comedy",
+    "Modern life"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "瑞颜（RuiYanRY）",
+    "url": "https://ltda.wikidot.com/soup-576",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “聊斋 · 隐退记”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

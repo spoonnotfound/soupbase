@@ -1,0 +1,47 @@
+{
+  "id": "curated-cinema-witness",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "没人报警的枪声",
+  "surface": "我坐着，看见一个很眼熟的人拔枪，另一个人随即倒下。周围很多人都看见了，却没人报警。\n我也没有离开。过了很久，灯亮了，我们才陆续起身。大家没有串通，更不是吓得不敢动。为什么？",
+  "solution": "我们坐在电影院里，看的是银幕上的电影。眼熟的人是经常在影视作品中出现的演员，不是我的熟人；枪声和倒下的人属于剧情。电影结束，放映厅灯亮，观众才离场。现场没有真的发生伤人事件。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "众人坐在电影院里，看到的是银幕上的虚构剧情。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "眼熟的人是演员，灯亮表示影片结束，因此没人需要报警。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "没有真实枪击或现场伤亡。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "影片名称、演员姓名和座位位置未设定。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "“眼熟”不一定代表私下认识。",
+    "为什么所有人都坐着，还要等灯亮？",
+    "这是一场电影院里的放映。"
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "经典",
+    "视角",
+    "日常"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Smart / LinuxBlanket",
+    "url": "https://puzzling.stackexchange.com/questions/66008/why-does-nobody-contact-the-police-about-the-murder",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Why does nobody contact the police about the murder?》。原文许可：CC BY-SA 4.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "curated-discarded-purchase-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Bought, Checked, Discarded",
+  "surface": "A man buys a thin little item. At the shop entrance he looks at it and drops it in a bin. It is not defective, nobody deceived him, and he neither gets angry nor asks for a refund. This was an outcome he expected might happen. Why?",
+  "solution": "It is an instant scratch ticket. He scratched off the covering while walking toward the entrance, then checked the result. It had not won, so he discarded it. The ticket had served its purpose of revealing that result.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "He bought an instant scratch ticket and uncovered it before leaving.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "It did not win, so after checking it he saw no reason to keep it.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The ticket was valid; he discarded the actual ticket, not packaging or a receipt.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "Its price, potential prize and his usual purchasing habits are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Could one use consume the item’s value?",
+    "He has already performed a small action while walking.",
+    "A covering must be scratched away to reveal whether it wins."
+  ],
+  "difficulty": "easy",
+  "tags": [
+    "Everyday",
+    "Odd behavior"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Riley / Rupert Morrish",
+    "url": "https://puzzling.stackexchange.com/questions/64123/man-buys-item-throws-it-away-on-his-way-out",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Man buys item, throws it away on his way out”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

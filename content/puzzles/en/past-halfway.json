@@ -1,0 +1,47 @@
+{
+  "id": "curated-past-halfway-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Past Halfway in Both Directions",
+  "surface": "I travel the same road between home and work. Whenever I look through the vehicle window at my friend’s house, I think, “More than halfway now.” This is true in both directions. The house stays put and the route never changes. How?",
+  "solution": "The house is near the route’s midpoint. In either direction I wait until we have passed that midpoint, then look back through a side window. The moment I see the house is therefore after halfway on either trip. Seeing a house need not mean just arriving beside it.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "The house is near the midpoint of the fixed route.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "In both directions the traveler looks back at it only after passing the midpoint.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "The endpoints and route never change, and there is no detour.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The distance, vehicle and delay before looking back are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Must seeing and passing the house happen together?",
+    "A window can show more than the road ahead.",
+    "Both times, the traveler has passed the midpoint before looking back."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Perspective",
+    "Everyday",
+    "Wording"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Etheryte / Rand al'Thor",
+    "url": "https://puzzling.stackexchange.com/questions/12736/a-long-lonely-drive",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “A long, lonely drive”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

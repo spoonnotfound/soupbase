@@ -51,6 +51,9 @@ BYOK requests pass through the deployment server, which can read the key. The ap
 Puzzles live in `content/puzzles/zh/` and `content/puzzles/en/`, one JSON file per puzzle. Each file has a stable `id` and the fields defined in `src/shared/puzzle.ts`. Add a file, run `npm run content:check`, then `npm run content:sync`. Keep the same ID when editing; existing games retain their original revision.
 
 
+The catalog contains 50 distinct stories (14 easy, 25 medium, 11 hard), with matching Chinese and English versions. The latest expansion adds 39 stories to the previous 11. Each curated adaptation includes three hints, two core solution facts and source attribution.
+
+
 ## Development
 
 ```sh
@@ -64,4 +67,4 @@ Tests use isolated databases and a mock model, without API credentials or paid c
 
 ## License
 
-[MIT](LICENSE) for code; [CC0 1.0](content/LICENSE.md) for bundled original puzzles. This content license does not apply to privately authored user puzzles.
+[MIT](LICENSE) for code. The 3 original sample stories use CC0 1.0; the 47 curated adaptations and their translations use CC BY-SA 4.0 with source attribution. All 50 stories have Chinese and English versions (100 JSON files). See the [content license](content/LICENSE.md) and [50-story expansion notes](docs/curation-2026-09-22-50.md), or expand “Source and license” in a game. These licenses do not automatically apply to privately authored user puzzles.

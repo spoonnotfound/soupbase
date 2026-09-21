@@ -1,0 +1,47 @@
+{
+  "id": "curated-too-many-batteries-en",
+  "schema_version": "1.0",
+  "language": "en",
+  "title": "Why 170 Batteries?",
+  "surface": "A woman writes down a battery specification but no quantity. Her husband returns with 170 batteries and insists he followed the note exactly. He was not stocking up, and the shop sold individual batteries. Why that number?",
+  "solution": "The note said AA batteries. After working with hexadecimal data all day, he mistakenly interpreted AA as a quantity rather than a battery size. In hexadecimal A represents ten, so AA means 10×16+10, or 170 in decimal.",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "AA on the note is a battery specification, not a quantity.",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "He mistakenly reads AA as hexadecimal, which equals 170 in decimal.",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "His recent work with hexadecimal explains this particular lapse.",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "The brand and any eventual return or refund are unspecified."
+  ],
+  "character_claims": [],
+  "hints": [
+    "Does the specification contain only ordinary digits?",
+    "Letters can represent numbers in another number system.",
+    "Hexadecimal AA equals 10×16+10."
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "Comedy",
+    "Misunderstanding",
+    "Numbers"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Devsman / clintperry",
+    "url": "https://puzzling.stackexchange.com/questions/31685/why-did-john-buy-so-many-batteries",
+    "license": "CC-BY-SA-4.0",
+    "note": "Adapted from “Why did John buy so many batteries?”. Source license: CC BY-SA 3.0; this adaptation and translation: CC BY-SA 4.0. Retold, translated and structured for Soupbase with AI assistance. Full attribution, revision histories and changes: content/LICENSE.md."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "curated-too-many-batteries",
+  "schema_version": "1.0",
+  "language": "zh",
+  "title": "170 节电池",
+  "surface": "妻子请丈夫照着纸条买电池。纸条写清了规格，却没写数量。\n他看完后认真地买回了 170 节，还说：“我完全照着你写的买的。”他没有囤货打算，也不是商店只能整箱卖。为什么偏偏是 170？",
+  "solution": "纸条上写着“AA 电池”。丈夫当天一直在处理十六进制数据，一时把规格 AA 当成了数量。十六进制的 A 代表十，AA 换成十进制就是 10×16+10，也就是 170。妻子写的是电池规格，丈夫却误把它读成另一种进制的数。",
+  "facts": [
+    {
+      "id": "f1",
+      "text": "纸条中的 AA 指电池规格，并非数量。",
+      "required": true
+    },
+    {
+      "id": "f2",
+      "text": "丈夫把 AA 误读为十六进制数，换成十进制是 170。",
+      "required": true
+    },
+    {
+      "id": "f3",
+      "text": "丈夫近期正在处理十六进制数据，这解释了他的思维惯性。",
+      "required": false
+    }
+  ],
+  "unknowns": [
+    "没有设定电池品牌或最后如何退换。"
+  ],
+  "character_claims": [],
+  "hints": [
+    "纸条上的规格是不是只由数字表示？",
+    "某些字母在另一种记数法里也能代表数值。",
+    "AA 在十六进制里等于 10×16+10。"
+  ],
+  "difficulty": "medium",
+  "tags": [
+    "喜剧",
+    "误会",
+    "数字"
+  ],
+  "source": {
+    "kind": "adapted",
+    "author": "Devsman / clintperry",
+    "url": "https://puzzling.stackexchange.com/questions/31685/why-did-john-buy-so-many-batteries",
+    "license": "CC-BY-SA-4.0",
+    "note": "改编自《Why did John buy so many batteries?》。原文许可：CC BY-SA 3.0；本改编与翻译采用 CC BY-SA 4.0。Soupbase 借助 AI 重述、翻译并补充主持事实和三档提示；完整署名、修订历史与改编说明见内容许可文件。"
+  }
+}
