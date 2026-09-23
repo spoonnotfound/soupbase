@@ -31,7 +31,7 @@ const answers: Record<string, [string, string]> = {
   yes: ["是", "Yes"],
   no: ["不是", "No"],
   irrelevant: ["不重要", "Irrelevant"],
-  uncertain: ["暂时无法判断", "Cannot determine yet"],
+  uncertain: ["无法确认", "Cannot determine"],
   solved: ["你还原了这个故事", "You solved the mystery"],
   incomplete: [
     "还没有完整还原，可以继续推理",
@@ -1090,8 +1090,8 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                 <h2>{t("关于回答", "About the answers")}</h2>
                 <p>
                   {t(
-                    "Jev 会回答「是」「不是」「不重要」或「暂时无法判断」。题目没交代清楚，或问题有歧义时，它可能无法判断。",
-                    "Jev answers Yes, No, Irrelevant or Cannot determine yet. Missing details or an ambiguous question can make it hard to decide.",
+                    "Jev 只回答「是」「不是」「不重要」。当它对答案没有明显倾向时，系统会显示「无法确认」。",
+                    "Jev answers only Yes, No or Irrelevant. When it has no clear preference, the result shows Cannot determine.",
                   )}
                 </p>
                 {cfg?.repository ? (

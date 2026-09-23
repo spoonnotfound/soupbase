@@ -38,7 +38,7 @@ The deployment buttons provision Neon Postgres inside Vercel and inject `DATABAS
 ## Features and configuration
 
 - Chinese/English UI, light/dark themes, saved games, hints and explanation checks.
-- Four host answers: Yes, No, Irrelevant, Cannot determine yet, with native confidence.
+- Three host answers: Yes, No, Irrelevant. When the model has no clear preference (confidence < 0.45) the result becomes "cannot determine", with native confidence.
 - Private browser authoring and revocable link sharing; no file uploads or import/export. Sharing never publishes to the public catalog.
 - `AI_ACCESS_MODE`: `byok_only` (default), `site_only`, or `both`. Site access requires server-side `AI_GATEWAY_API_KEY`; credentials never silently fall back.
 

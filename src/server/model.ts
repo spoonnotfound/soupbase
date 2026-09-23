@@ -5,7 +5,10 @@ import { AppError } from "./access";
 import { config } from "./config";
 import { guessQuestions, gradeGuess } from "./guess";
 import { hostQuestions, hostState } from "./host";
-import { CONFIDENCE_THRESHOLD } from "@/shared/confidence";
+import {
+  CONFIDENCE_THRESHOLD,
+  HOST_UNCERTAIN_THRESHOLD,
+} from "@/shared/confidence";
 import { decisions, type Decision, type PuzzleInput } from "@/shared/puzzle";
 export function selectKey(source: string, byok: string | null) {
   const c = config();
@@ -21,7 +24,18 @@ export function selectKey(source: string, byok: string | null) {
   }
   throw new AppError("invalid_source", 422);
 }
-export function hostDecision(answer: unknown): Decision {
+/**
+ * Jev only picks between yes/no/irrelevant. "uncertain" is derived here: a missing,
+ * malformed or too-even confidence distribution never becomes a concrete answer.
+ */
+export function hostDecision(answer: unknown, confidence: unknown): Decision {
+  if (
+    typeof confidence !== "number" ||
+    !Number.isFinite(confidence) ||
+    confidence < HOST_UNCERTAIN_THRESHOLD ||
+    confidence > 1
+  )
+    return "uncertain";
   const choice = (answer as { choice?: unknown } | null)?.choice;
   if (typeof choice !== "string" || !decisions.includes(choice as Decision))
     throw new AppError("upstream_failed", 502);
@@ -30,7 +44,7 @@ export function hostDecision(answer: unknown): Decision {
 export async function judge(
   p: PuzzleInput,
   input: string,
-  history: { input: string; decision: string }[],
+  history: { input: string }[],
   kind: string,
   key: string,
 ) {
@@ -70,7 +84,7 @@ export async function judge(
               answers,
               confidence,
             )
-          : hostDecision(answers?.answer),
+          : hostDecision(answers?.answer, confidence?.answer),
       metadata: {
         trace: {
           request: {
@@ -129,7 +143,8 @@ export async function judge(
         },
         model: config().model,
         confidence: confidence || null,
-        confidenceThreshold: kind === "guess" ? CONFIDENCE_THRESHOLD : null,
+        confidenceThreshold:
+          kind === "guess" ? CONFIDENCE_THRESHOLD : HOST_UNCERTAIN_THRESHOLD,
         inputTokens: r.usage.inputTokens,
         outputTokens: r.usage.outputTokens,
       },
