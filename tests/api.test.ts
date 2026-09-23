@@ -219,7 +219,7 @@ describe("resource access and gameplay", () => {
     expect(r.data.turns[0].decision).toBe("yes");
     expect(r.data.turns[0].confidence).toEqual({
       score: 0.99,
-      threshold: null,
+      threshold: 0.45,
       checks: [{ kind: "answer", score: 0.99 }],
     });
     expect(r.data.turns[0]).not.toHaveProperty("metadata");
