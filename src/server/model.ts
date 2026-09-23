@@ -1,8 +1,8 @@
 import "server-only";
-import { experimental_evaluate as evaluate } from "ai";
-import { createGateway } from "@ai-sdk/gateway";
 import { AppError } from "./access";
-import { config } from "./config";
+import { config, providerKeyNames } from "./config";
+import { evaluateJev, type Questions } from "./providers";
+import { providers, type Provider } from "@/shared/providers";
 import { guessQuestions, gradeGuess } from "./guess";
 import { hostQuestions, hostState } from "./host";
 import {
@@ -10,17 +10,24 @@ import {
   HOST_UNCERTAIN_THRESHOLD,
 } from "@/shared/confidence";
 import { decisions, type Decision, type PuzzleInput } from "@/shared/puzzle";
-export function selectKey(source: string, byok: string | null) {
+export function selectCredentials(
+  source: string,
+  byok: string | null,
+  provider: Provider = "vercel",
+) {
   const c = config();
   if (source === "site") {
     if (c.mode === "byok_only") throw new AppError("site_disabled", 403);
-    return process.env.AI_GATEWAY_API_KEY!;
+    return {
+      provider: c.siteProvider,
+      key: process.env[providerKeyNames[c.siteProvider]]!,
+    };
   }
   if (source === "byok") {
     if (c.mode === "site_only") throw new AppError("byok_disabled", 403);
     if (!byok || byok.length < 12 || byok.length > 512 || /[\r\n]/.test(byok))
       throw new AppError("key_required", 401);
-    return byok;
+    return { provider, key: byok };
   }
   throw new AppError("invalid_source", 422);
 }
@@ -47,35 +54,14 @@ export async function judge(
   history: { input: string }[],
   kind: string,
   key: string,
+  provider: Provider = "vercel",
 ) {
-  const gateway = createGateway({
-    apiKey: key,
-    fetch: async (url, init) => {
-      const host = new URL(String(url)).hostname;
-      if (host !== "ai-gateway.vercel.sh")
-        throw new AppError("upstream_failed", 502);
-      return fetch(url, { ...init, redirect: "error" });
-    },
-  });
-  const questions: Record<
-    string,
-    { type: "choice"; instructions: string; criteria: Record<string, string> }
-  > = kind === "guess" ? guessQuestions(p) : hostQuestions();
+  const questions: Questions =
+    kind === "guess" ? guessQuestions(p) : hostQuestions();
   const state = hostState(p, input, kind === "guess" ? [] : history);
   try {
-    const r = await evaluate({
-      model: gateway.evaluationModel(config().model),
-      state,
-      questions,
-      maxRetries: 0,
-      abortSignal: AbortSignal.timeout(20000),
-    });
-    const confidence = r.providerMetadata?.typesafe?.confidence as
-      Record<string, number> | undefined;
-    const answers = r.answers as Record<
-      string,
-      { choice: string; probabilities: Record<string, number> }
-    >;
+    const r = await evaluateJev(provider, key, state, questions);
+    const { confidence, answers } = r;
     return {
       decision:
         kind === "guess"
@@ -88,7 +74,8 @@ export async function judge(
       metadata: {
         trace: {
           request: {
-            model: config().model,
+            provider,
+            model: providers[provider].model,
             state,
             questions,
             maxRetries: 0,
@@ -141,7 +128,8 @@ export async function judge(
             },
           },
         },
-        model: config().model,
+        provider,
+        model: providers[provider].model,
         confidence: confidence || null,
         confidenceThreshold:
           kind === "guess" ? CONFIDENCE_THRESHOLD : HOST_UNCERTAIN_THRESHOLD,
@@ -155,10 +143,18 @@ export async function judge(
     throw new AppError(
       status === 401 || status === 403
         ? "key_rejected"
-        : status === 429
-          ? "provider_rate_limit"
-          : "upstream_failed",
-      status === 429 ? 429 : status === 401 || status === 403 ? 401 : 502,
+        : status === 402
+          ? "provider_credits_exhausted"
+          : status === 429
+            ? "provider_rate_limit"
+            : "upstream_failed",
+      status === 429
+        ? 429
+        : status === 402
+          ? 402
+          : status === 401 || status === 403
+            ? 401
+            : 502,
     );
   }
 }

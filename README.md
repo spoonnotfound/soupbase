@@ -2,7 +2,7 @@
 
 一个以文字为中心的中英文海龟汤网站，由 Jev 担任主持人。支持提问、逐步提示、提交还原，以及私有创作和链接分享。
 
-模型使用 [TypeSafe AI](https://typesafe.ai/) 的 [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)，通过 Vercel AI Gateway（`typesafe-ai/jev`）调用。Jev 负责提问判定与还原评分，返回结构化选项、概率和置信度；网站据此展示回答和判定结果。
+模型使用 [TypeSafe AI](https://typesafe.ai/) 的 [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)，支持 TypeSafe 官方 API、OpenRouter 和 Vercel AI Gateway。Jev 负责提问判定与还原评分，返回结构化选项、概率和置信度；网站据此展示回答和判定结果。
 
 [English](README.en.md) · [部署](docs/deployment.md) · [模型与架构](docs/architecture.md) · [安全边界](docs/security.md)
 
@@ -24,6 +24,7 @@
 - 中文 / 英文界面、深浅主题、游戏记录、主动揭晓。
 - 网页创作；题目默认私有，分享链接可撤销，不进入公共题库。
 - 支持 BYOK、站点提供 Key，或两者并存。
+- 请求响应丢失后查询原结果；重复提交复用请求 ID，不自动重试模型或切换服务。失败后需明确选择重新发起。
 - 无账号系统；不包含匿名每日配额、内容审核或 Star 解锁。
 
 ## 本地运行
@@ -39,7 +40,7 @@ npm run dev
 
 打开 [localhost:3000/zh](http://localhost:3000/zh)。默认使用 PGlite，无需安装 PostgreSQL；数据保存在 Git 忽略的 `.data/postgres`。同步和维护本地数据库前先停止开发服务，不要用多个进程同时打开该目录。
 
-默认 BYOK：在右上角设置中输入 **Vercel AI Gateway Key**。Key 只保留在页面内存，刷新后需要重填；调用会产生供应商费用。没有 Key 也可以浏览题目、创作、查看提示和揭底。
+默认 BYOK：在右上角设置中选择 **TypeSafe AI、OpenRouter 或 Vercel AI Gateway**，输入对应服务的 Key。Key 只保留在页面内存，刷新或切换服务后需要重填；调用会产生供应商费用。没有 Key 也可以浏览题目、创作、查看提示和揭底。
 
 Vercel 部署通过 Neon 集成创建 PostgreSQL 并自动注入连接串；域名自动取当前请求，无需手填。见[部署指南](docs/deployment.md)。
 
@@ -48,10 +49,18 @@ Vercel 部署通过 Neon 集成创建 PostgreSQL 并自动注入连接串；域�
 | 配置 | 作用 |
 | --- | --- |
 | `AI_ACCESS_MODE=byok_only` | 默认：玩家使用自己的 Key |
-| `AI_ACCESS_MODE=site_only` | 使用服务端 `AI_GATEWAY_API_KEY` |
+| `AI_ACCESS_MODE=site_only` | 只使用服务端配置的 Key |
 | `AI_ACCESS_MODE=both` | 玩家选择站点 Key 或 BYOK，不自动回退 |
 
-唯一功能设置是 `AI_ACCESS_MODE`。站点 Key 保存在服务端 `AI_GATEWAY_API_KEY`；`DATABASE_URL` 由集成提供。网页只支持创作和私有链接分享，不提供文件上传/导入导出，也不会自动发布到公共题库。
+`AI_SITE_PROVIDER` 选择站点服务，默认 `vercel`；BYOK 玩家独立选择自己的服务。只需配置选中服务的 Key：
+
+| `AI_SITE_PROVIDER` | 服务端 Key | 模型 |
+| --- | --- | --- |
+| `vercel` | `AI_GATEWAY_API_KEY` | `typesafe-ai/jev` |
+| `typesafe` | `TYPESAFE_API_KEY` | `jev-1.13.0` |
+| `openrouter` | `OPENROUTER_API_KEY` | `typesafe/jev-1.13` |
+
+切换到 `AI_ACCESS_MODE=byok_only` 并重新部署即可停用当前部署的站点 Key。部署按钮默认使用 Vercel Gateway；官方 API / OpenRouter 的切换步骤见[部署指南](docs/deployment.md)。`DATABASE_URL` 由集成提供。
 
 BYOK 请求会经过部署者服务器，服务器能读取 Key；开源并不意味着浏览器直连供应商。本应用代码不持久化或主动记录模型 Key。更完整的信任边界见[安全说明](docs/security.md)。站点 Key 模式没有内置消费限额，额度管理由部署者负责。
 

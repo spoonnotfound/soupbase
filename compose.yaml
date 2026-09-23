@@ -32,7 +32,10 @@ services:
     environment:
       DATABASE_URL: postgresql://soupbase:${POSTGRES_PASSWORD}@db:5432/soupbase
       AI_ACCESS_MODE: ${AI_ACCESS_MODE:-byok_only}
+      AI_SITE_PROVIDER: ${AI_SITE_PROVIDER:-vercel}
       AI_GATEWAY_API_KEY: ${AI_GATEWAY_API_KEY:-}
+      TYPESAFE_API_KEY: ${TYPESAFE_API_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
     depends_on:
       migrate:
         condition: service_completed_successfully

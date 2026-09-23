@@ -102,6 +102,7 @@ export type Game = {
   hints: string[];
   turns: {
     id: string;
+    requestId: string;
     kind: string;
     input: string;
     decision: string;

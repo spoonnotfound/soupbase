@@ -67,6 +67,27 @@ describe("Vercel deployment", () => {
       { DATABASE_URL: "postgres://synthetic", AI_ACCESS_MODE: "invalid" },
       "Invalid AI_ACCESS_MODE",
     ],
+    [
+      { DATABASE_URL: "postgres://synthetic", AI_SITE_PROVIDER: "invalid" },
+      "Invalid AI_SITE_PROVIDER",
+    ],
+    [
+      {
+        DATABASE_URL: "postgres://synthetic",
+        AI_ACCESS_MODE: "both",
+        AI_SITE_PROVIDER: "typesafe",
+        AI_GATEWAY_API_KEY: "synthetic-vercel",
+      },
+      "TYPESAFE_API_KEY",
+    ],
+    [
+      {
+        DATABASE_URL: "postgres://synthetic",
+        AI_ACCESS_MODE: "site_only",
+        AI_SITE_PROVIDER: "openrouter",
+      },
+      "OPENROUTER_API_KEY",
+    ],
   ])(
     "rejects incomplete Vercel configuration before building",
     (extra, expected) => {

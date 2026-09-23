@@ -48,8 +48,8 @@ export function ModelTrace({
       </summary>
       <p className="muted small">
         {en
-          ? "See the puzzle and rules sent to the model, along with its answers. These are SDK records without API keys. Older or failed requests may have no record."
-          : "这里可以查看发给模型的题目、判题规则和返回结果（SDK 数据，不含 Key）。旧对话或失败的请求可能没有记录。"}
+          ? "See the puzzle and rules sent to the model, along with its answers. These records contain no API keys. Older or failed requests may have no record."
+          : "这里可以查看发给模型的题目、判题规则和返回结果，不含 Key。旧对话或失败的请求可能没有记录。"}
       </p>
       {busy && <p>{en ? "Loading…" : "读取中…"}</p>}
       {error && (

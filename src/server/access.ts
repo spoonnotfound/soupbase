@@ -73,8 +73,20 @@ export function publicPuzzle(p: Record<string, any>) {
 export async function game(id: string, visitorId: string) {
   const s = await session(id, visitorId);
   const turns = await query(
-    sql`SELECT id,kind,input,decision,status,metadata->'trace'->'response' AS response,metadata->'confidence' AS confidence,metadata->'confidenceThreshold' AS confidence_threshold,metadata ? 'confidenceThreshold' AS has_confidence_threshold FROM turns WHERE session_id=${id} ORDER BY created_at,id`,
+    sql`SELECT id,request_id AS "requestId",kind,input,decision,status,metadata->'trace'->'response' AS response,metadata->'confidence' AS confidence,metadata->'confidenceThreshold' AS confidence_threshold,metadata ? 'confidenceThreshold' AS has_confidence_threshold FROM turns WHERE session_id=${id} ORDER BY created_at,id`,
   );
+  // An expired lease cannot produce a committed result. Report it without retrying the model.
+  for (const turn of turns) {
+    if (
+      turn.status === "pending" &&
+      (s.pending_id !== turn.id ||
+        !s.lease_until ||
+        new Date(s.lease_until) <= new Date())
+    ) {
+      turn.status = "failed";
+      turn.decision = "result_unknown";
+    }
+  }
   const requiredIds = (s.secret_content as PuzzleInput).facts
     .filter((fact) => fact.required)
     .map((fact) => fact.id);

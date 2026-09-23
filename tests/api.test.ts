@@ -117,6 +117,7 @@ beforeAll(async () => {
   process.env.LOCAL_DB_PATH = ".data/test-" + randomUUID();
   delete process.env.DATABASE_URL;
   process.env.AI_ACCESS_MODE = "byok_only";
+  process.env.AI_SITE_PROVIDER = "vercel";
 });
 describe("resource access and gameplay", () => {
   it("exposes only public puzzle fields", async () => {
@@ -534,6 +535,205 @@ describe("resource access and gameplay", () => {
       (await author.request("puzzles/" + puzzleId + "/export")).status,
     ).toBe(404);
   });
+});
+
+describe("request replay", () => {
+  async function fresh() {
+    const client = new Client();
+    const r = await client.request("sessions", "POST", {
+      puzzleId: "sample-1",
+    });
+    return { client, id: r.data.id as string };
+  }
+  const body = () => ({
+    text: "是真的吗？",
+    clientRequestId: randomUUID(),
+    credentialSource: "byok",
+  });
+
+  it("deduplicates concurrent submissions and recovers without resending a key", async () => {
+    const { client, id } = await fresh();
+    const request = body();
+    const before = mocked.keys.length;
+    mocked.delay = 40;
+    try {
+      const responses = await Promise.all([
+        client.request(
+          `sessions/${id}/questions`,
+          "POST",
+          request,
+          "synthetic-replay-key",
+        ),
+        client.request(
+          `sessions/${id}/questions`,
+          "POST",
+          request,
+          "synthetic-replay-key",
+        ),
+      ]);
+      expect(responses.some((r) => r.status === 200)).toBe(true);
+      expect(responses.every((r) => r.status === 200 || r.status === 409)).toBe(
+        true,
+      );
+      expect(mocked.keys.length).toBe(before + 1);
+      const replay = await client.request(
+        `sessions/${id}/questions`,
+        "POST",
+        request,
+      );
+      expect(replay.status).toBe(200);
+      expect(replay.data.turns).toHaveLength(1);
+      expect(replay.data.turns[0].requestId).toBe(request.clientRequestId);
+      expect(mocked.keys.length).toBe(before + 1);
+      expect(
+        (await query(sql`SELECT pending_id FROM sessions WHERE id=${id}`))[0]
+          .pending_id,
+      ).toBeNull();
+    } finally {
+      mocked.delay = 0;
+    }
+  });
+
+  it("rejects using the same request ID for different input or a different action", async () => {
+    const { client, id } = await fresh();
+    const request = body();
+    await client.request(
+      `sessions/${id}/questions`,
+      "POST",
+      request,
+      "synthetic-replay-key",
+    );
+    const before = mocked.keys.length;
+    expect(
+      (
+        await client.request(`sessions/${id}/questions`, "POST", {
+          ...request,
+          text: "换个问题",
+        })
+      ).data.code,
+    ).toBe("request_conflict");
+    expect(
+      (await client.request(`sessions/${id}/guess`, "POST", request)).data.code,
+    ).toBe("request_conflict");
+    expect(mocked.keys.length).toBe(before);
+  });
+
+  it("recovers a solved explanation after its response was lost", async () => {
+    const { client, id } = await fresh();
+    const request = body();
+    mocked.guessChoices = {};
+    const result = await client.request(
+      `sessions/${id}/guess`,
+      "POST",
+      request,
+      "synthetic-replay-key",
+    );
+    expect(result.data.status).toBe("solved");
+    const before = mocked.keys.length;
+    const replay = await client.request(
+      `sessions/${id}/guess`,
+      "POST",
+      request,
+    );
+    expect(replay.status).toBe(200);
+    expect(replay.data).toEqual(result.data);
+    expect(mocked.keys.length).toBe(before);
+  });
+
+  it("retains failed requests so a replay never makes a second provider call", async () => {
+    const { client, id } = await fresh();
+    const request = body();
+    const before = mocked.keys.length;
+    mocked.failure = 500;
+    try {
+      expect(
+        (
+          await client.request(
+            `sessions/${id}/questions`,
+            "POST",
+            request,
+            "synthetic-replay-key",
+          )
+        ).status,
+      ).toBe(502);
+    } finally {
+      mocked.failure = 0;
+    }
+    const replay = await client.request(
+      `sessions/${id}/questions`,
+      "POST",
+      request,
+    );
+    expect(replay.status).toBe(200);
+    expect(replay.data.turns[0].status).toBe("failed");
+    expect(mocked.keys.length).toBe(before + 1);
+  });
+
+  it("reports an expired pending request as unknown without calling the model again", async () => {
+    const { client, id } = await fresh();
+    const request = body();
+    const turnId = randomUUID();
+    await query(
+      sql`INSERT INTO turns(id,session_id,request_id,kind,input) VALUES (${turnId},${id},${request.clientRequestId},'question',${request.text})`,
+    );
+    await query(
+      sql`UPDATE sessions SET pending_id=${turnId},lease_until=now()-interval '1 second' WHERE id=${id}`,
+    );
+    const before = mocked.keys.length;
+    const replay = await client.request(
+      `sessions/${id}/questions`,
+      "POST",
+      request,
+    );
+    expect(replay.status).toBe(200);
+    expect(replay.data.turns[0]).toMatchObject({
+      status: "failed",
+      decision: "result_unknown",
+      requestId: request.clientRequestId,
+    });
+    expect(mocked.keys.length).toBe(before);
+  });
+
+  it.each(["typesafe", "openrouter"] as const)(
+    "routes BYOK to %s and keeps its key out of game records",
+    async (provider) => {
+      const { client, id } = await fresh();
+      const key = `synthetic-${provider}-never-persist`;
+      const fetch = vi.fn(async () =>
+        Response.json({
+          answers: {
+            answer: {
+              type: "choice",
+              choice: "yes",
+              confidence: 0.91,
+              probabilities: { yes: 0.94, no: 0.03, irrelevant: 0.03 },
+            },
+          },
+          usage: { input_tokens: 111, output_tokens: 3 },
+        }),
+      );
+      vi.stubGlobal("fetch", fetch);
+      try {
+        const response = await client.request(
+          `sessions/${id}/questions`,
+          "POST",
+          { ...body(), provider },
+          key,
+        );
+        expect(response.status).toBe(200);
+        expect(response.data.turns[0].confidence.score).toBe(0.91);
+        expect(fetch).toHaveBeenCalledTimes(1);
+        const [row] = await query(
+          sql`SELECT metadata FROM turns WHERE session_id=${id}`,
+        );
+        expect(row.metadata.provider).toBe(provider);
+        expect(JSON.stringify(row)).not.toContain(key);
+        expect(JSON.stringify(response.data)).not.toContain(key);
+      } finally {
+        vi.unstubAllGlobals();
+      }
+    },
+  );
 });
 
 describe("explanation submission", () => {

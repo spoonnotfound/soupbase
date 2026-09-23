@@ -15,7 +15,8 @@ import {
   publicPuzzle,
 } from "./access";
 import { config } from "./config";
-import { judge, selectKey } from "./model";
+import { judge, selectCredentials } from "./model";
+import { providerIds } from "@/shared/providers";
 async function readBody(req: NextRequest) {
   if (Number(req.headers.get("content-length") || 0) > 65536)
     throw new AppError("too_large", 413);
@@ -44,6 +45,7 @@ const requestSchema = z.object({
   text: z.string().trim().min(1),
   clientRequestId: z.string().uuid(),
   credentialSource: z.enum(["site", "byok"]),
+  provider: z.enum(providerIds).optional(),
 });
 export async function handle(req: NextRequest, paths: string[]) {
   let newToken: string | undefined;
@@ -229,8 +231,8 @@ export async function handle(req: NextRequest, paths: string[]) {
         );
         return reply(await game(id, v.id));
       }
-      if (s.status !== "active") throw new AppError("game_finished", 409);
       if (action === "hints" && method === "POST") {
+        if (s.status !== "active") throw new AppError("game_finished", 409);
         const b = z
           .strictObject({ clientRequestId: z.string().uuid() })
           .parse(body);
@@ -243,35 +245,52 @@ export async function handle(req: NextRequest, paths: string[]) {
         const b = requestSchema.parse(body);
         if ([...b.text].length > (action === "guess" ? 3000 : 500))
           throw new AppError("too_large", 413);
-        const key = selectKey(
-          b.credentialSource,
-          req.headers.get("authorization")?.replace(/^Bearer /, "") || null,
-        );
+        const kind = action === "guess" ? "guess" : "question";
         const [old] = await query(
           sql`SELECT * FROM turns WHERE session_id=${id} AND request_id=${b.clientRequestId}`,
         );
         if (old) {
-          if (old.input !== b.text) throw new AppError("request_conflict", 409);
+          if (old.input !== b.text || old.kind !== kind)
+            throw new AppError("request_conflict", 409);
           if (
             old.status === "pending" &&
+            s.pending_id === old.id &&
             s.lease_until &&
             new Date(s.lease_until) > new Date()
           )
             throw new AppError("request_pending", 409);
           return reply(await game(id, v.id));
         }
+        if (s.status !== "active") throw new AppError("game_finished", 409);
+        const { key, provider } = selectCredentials(
+          b.credentialSource,
+          req.headers.get("authorization")?.replace(/^Bearer /, "") || null,
+          b.provider,
+        );
         const tid = uid();
         const claimed = await query(
           sql`UPDATE sessions SET pending_id=${tid},lease_until=now()+interval '45 seconds' WHERE id=${id} AND status='active' AND (pending_id IS NULL OR lease_until<now()) RETURNING id`,
         );
         if (!claimed.length) throw new AppError("request_pending", 409);
-        await query(
-          sql`UPDATE turns SET status='failed',decision='result_unknown' WHERE session_id=${id} AND status='pending'`,
+        const inserted = await query(
+          sql`INSERT INTO turns(id,session_id,request_id,kind,input) VALUES (${tid},${id},${b.clientRequestId},${kind},${b.text}) ON CONFLICT(session_id,request_id) DO NOTHING RETURNING id`,
         );
-        await query(
-          sql`INSERT INTO turns(id,session_id,request_id,kind,input) VALUES (${tid},${id},${b.clientRequestId},${action === "guess" ? "guess" : "question"},${b.text})`,
-        );
+        if (!inserted.length) {
+          // A racing replay may have completed between the initial read and lease claim.
+          await query(
+            sql`UPDATE sessions SET pending_id=NULL,lease_until=NULL WHERE id=${id} AND pending_id=${tid}`,
+          );
+          const [existing] = await query(
+            sql`SELECT input,kind FROM turns WHERE session_id=${id} AND request_id=${b.clientRequestId}`,
+          );
+          if (existing.input !== b.text || existing.kind !== kind)
+            throw new AppError("request_conflict", 409);
+          return reply(await game(id, v.id));
+        }
         try {
+          await query(
+            sql`UPDATE turns SET status='failed',decision='result_unknown' WHERE session_id=${id} AND status='pending' AND id<>${tid}`,
+          );
           const history = await query<{ input: string }>(
             sql`SELECT input FROM turns WHERE session_id=${id} AND status='complete' ORDER BY created_at DESC LIMIT 6`,
           );
@@ -281,6 +300,7 @@ export async function handle(req: NextRequest, paths: string[]) {
             history.reverse(),
             action === "guess" ? "guess" : "question",
             key,
+            provider,
           );
           await session(id, v.id);
           const finalized = await query(

@@ -2,9 +2,29 @@
 
 ## 请求流程
 
-浏览器 → Next.js API → 服务端读取题目版本和汤底 → Vercel AI Gateway → Jev → 服务端校验固定结构 → 保存结果并返回公开字段。
+浏览器 → Next.js API → 服务端读取题目版本和汤底 → 选定服务 → Jev → 服务端校验固定结构 → 保存结果并返回公开字段。
 
-浏览器只提交问题、请求 ID 和凭证来源。BYOK 通过 Authorization header 传入；每次请求创建独立 Gateway 客户端。模型会收到汤面、汤底、关键事实及必要上下文，未揭示的汤底不由正常游戏接口返回给玩家。
+浏览器提交问题、请求 ID、凭证来源和 BYOK 服务。BYOK 通过 Authorization header 传入；凭证仅用于当前请求。站点服务由服务端 `AI_SITE_PROVIDER` 决定，客户端不能替换站点 Key 的目的地。模型会收到汤面、汤底、关键事实及必要上下文，未揭示的汤底不由正常游戏接口返回给玩家。
+
+`src/server/providers.ts` 统一三种调用方式的结果：
+
+| 服务 | 接口 | 模型 |
+| --- | --- | --- |
+| Vercel AI Gateway | AI SDK `experimental_evaluate` | `typesafe-ai/jev` |
+| TypeSafe AI | `POST https://api.typesafe.ai/v1/systemone` | `jev-1.13.0` |
+| OpenRouter | `POST https://openrouter.ai/api/alpha/decisions` | `typesafe/jev-1.13` |
+
+TypeSafe 和 OpenRouter 使用原生决策接口，不使用 Chat Completions。逐项 `answers[id].confidence` 统一为判题所需结构，`input_tokens` / `output_tokens` 统一为 token 用量。Vercel 的 confidence 来自 SDK 的 `providerMetadata.typesafe.confidence`。三个入口均关闭应用层自动重试，OpenRouter 另设置 `provider.allow_fallbacks=false`，不在不同服务或 Key 之间自动回退。
+
+接口依据：[TypeSafe API](https://docs.typesafe.ai/api)、[TypeSafe 模型](https://docs.typesafe.ai/models)、[OpenRouter Decisions](https://openrouter.ai/docs/api/api-reference/alphadecisions/submit-a-decisions-request)。
+
+## 重复提交与响应恢复
+
+每次新提问/还原先生成请求 ID，在当前标签页的 `sessionStorage` 保留该 ID 和内容摘要，不保存输入原文或 Key。响应丢失、刷新后再次提交同一内容时，先读取原结果；服务器还没有记录时才用原 ID 提交。读取失败不会触发模型调用。
+
+数据库的 `(session_id, request_id)` 唯一约束及会话租约阻止并发重复调用。同一 ID 即使原请求失败、会话已结束或 Key 已停用，也只读取已有记录，不再次调用模型；更改请求内容或类型会被拒绝。页面上的「查询结果」只读数据库。失败或处理超时的请求需要明确选择「重新发起（可能再次计费）」才用新 ID 重做。
+
+这避免了应用自动重试造成的额外调用，但不能撤回供应商已处理的请求，也不能确定网络中断时供应商是否计费。主动新建请求、改写问题或重新开局仍是新的调用。
 
 ## 主持人
 

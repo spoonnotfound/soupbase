@@ -4,8 +4,11 @@ import type { Game, PublicPuzzle, PuzzleInput } from "@/shared/puzzle";
 import { Confidence } from "./confidence";
 import { ModelTrace } from "./model-trace";
 import { PuzzleSource } from "./puzzle-source";
+import { providers, providerIds, type Provider } from "@/shared/providers";
+import { Submissions, SubmissionError } from "@/client/submissions";
 type Config = {
   mode: string;
+  siteProvider: Provider;
   model: string;
   repository: string | null;
 };
@@ -46,6 +49,30 @@ const errors: Record<string, [string, string]> = {
   key_rejected: [
     "Key 被服务商拒绝，请检查凭证。",
     "The provider rejected this key.",
+  ],
+  site_disabled: [
+    "本站 Key 已停用，请在设置中使用自己的 Key。",
+    "Hosted access is disabled. Use your own key in Settings.",
+  ],
+  byok_disabled: [
+    "本站当前只支持站点 Key。",
+    "This site currently supports hosted access only.",
+  ],
+  provider_credits_exhausted: [
+    "所选服务的额度不足，请检查该账户余额。",
+    "The selected service has insufficient credits. Check your account balance.",
+  ],
+  result_unconfirmed: [
+    "暂时无法确认结果。再次提交时会先查询原请求。",
+    "The result is unconfirmed. Submitting again will first check the original request.",
+  ],
+  request_not_completed: [
+    "这次请求未完成，可能已计费。可查询结果，或明确发起新的请求。",
+    "This request did not complete and may have been billed. Check its result or explicitly start a new request.",
+  ],
+  request_conflict: [
+    "这次请求与之前提交的内容不同，请重新打开本局。",
+    "This request differs from the original submission. Reopen this game.",
   ],
   provider_rate_limit: [
     "模型服务商暂时限流，请稍后重试。",
@@ -103,6 +130,7 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
     [notice, setNotice] = useState(""),
     [key, setKey] = useState(""),
     [source, setSource] = useState<"site" | "byok">("byok"),
+    [provider, setProvider] = useState<Provider>("vercel"),
     [question, setQuestion] = useState(""),
     [guess, setGuess] = useState(false),
     [explanation, setExplanation] = useState(""),
@@ -123,6 +151,41 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
   const gameScroll = useRef<HTMLDivElement>(null),
     questionInput = useRef<HTMLTextAreaElement>(null),
     initial = useRef(false);
+  const busyRef = useRef(false);
+  const submissionRef = useRef<Submissions | null>(null);
+  const [recovery, setRecovery] = useState<{
+    sessionId: string;
+    canStartNew: boolean;
+  }>();
+  const activeProvider =
+    source === "site" ? cfg?.siteProvider || "vercel" : provider;
+  function submissions() {
+    if (!submissionRef.current) {
+      let storage: Storage | undefined;
+      try {
+        storage = window.sessionStorage;
+      } catch {}
+      submissionRef.current = new Submissions(storage);
+    }
+    return submissionRef.current;
+  }
+  function submissionFailed(error: unknown, sessionId: string) {
+    if (error instanceof SubmissionError) {
+      if (error.game) setGame(error.game);
+      setRecovery({ sessionId, canStartNew: error.canStartNew });
+    }
+  }
+  function submissionCompleted(updated: Game) {
+    setGame(updated);
+    setRecovery(undefined);
+    const turn = updated.turns.at(-1);
+    if (turn?.status === "complete") {
+      if (turn.kind === "question")
+        setQuestion((text) => (text.trim() === turn.input ? "" : text));
+      else if (updated.status === "solved")
+        setExplanation((text) => (text.trim() === turn.input ? "" : text));
+    }
+  }
   async function api<T>(
     url: string,
     method = "GET",
@@ -155,7 +218,8 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
     );
   }
   async function run(fn: () => Promise<void>) {
-    if (busy) return;
+    if (busyRef.current) return;
+    busyRef.current = true;
     setBusy(true);
     setError("");
     setNotice("");
@@ -164,6 +228,7 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
     } catch (e) {
       explain(e);
     } finally {
+      busyRef.current = false;
       setBusy(false);
     }
   }
@@ -220,6 +285,12 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
     setView("play");
     setConfirmReveal(false);
     updateURL(g.puzzle.id, id);
+    try {
+      submissionCompleted(await submissions().check(id, async () => g));
+    } catch (error) {
+      submissionFailed(error, id);
+      explain(error);
+    }
   }
   async function editPuzzle(p: PublicPuzzle) {
     const r = await api<{ content: PuzzleInput; revision: string }>(
@@ -251,6 +322,7 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
         ]);
         setCfg(c);
         setSource(c.mode === "byok_only" ? "byok" : "site");
+        setProvider(c.siteProvider || "vercel");
         setPuzzles(ps);
         setLib(l);
         const url = new URL(location.href);
@@ -308,27 +380,42 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
     updateURL(selected.id, g.id);
     return g;
   }
-  async function submit(e: FormEvent) {
-    e.preventDefault();
+  async function submit(e?: FormEvent, startNew = false) {
+    e?.preventDefault();
     const submission = (guess ? explanation : question).trim();
     if (!submission) return;
     await run(async () => {
-      if (source === "byok" && !key) throw new Error("key_required");
       const g = game || (await start());
       if (!g) return;
-      const updated = await api<Game>(
-        `sessions/${g.id}/${guess ? "guess" : "questions"}`,
-        "POST",
-        {
-          text: submission,
-          clientRequestId: crypto.randomUUID(),
-          credentialSource: source,
-        },
-        true,
-      );
-      setGame(updated);
-      if (!guess) setQuestion("");
-      else if (updated.status === "solved") setExplanation("");
+      if (startNew) submissions().forget(g.id);
+      try {
+        const updated = await submissions().submit(
+          g.id,
+          guess ? "guess" : "question",
+          submission,
+          {
+            load: () => api<Game>(`sessions/${g.id}`),
+            send: async (clientRequestId) => {
+              if (source === "byok" && !key) throw new Error("key_required");
+              return api<Game>(
+                `sessions/${g.id}/${guess ? "guess" : "questions"}`,
+                "POST",
+                {
+                  text: submission,
+                  clientRequestId,
+                  credentialSource: source,
+                  provider,
+                },
+                true,
+              );
+            },
+          },
+        );
+        submissionCompleted(updated);
+      } catch (error) {
+        submissionFailed(error, g.id);
+        throw error;
+      }
     });
     requestAnimationFrame(() =>
       questionInput.current?.focus({ preventScroll: true }),
@@ -658,8 +745,8 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                                   : label(turn.decision)
                                 : turn.status === "pending"
                                   ? t(
-                                      "等待结果；超过 45 秒可重新提问。",
-                                      "Awaiting a result. After 45 seconds you may ask again.",
+                                      "正在处理，可查询结果；不会自动再次调用模型。",
+                                      "Processing. Check the result without calling the model again.",
                                     )
                                   : t(
                                       "未完成，不自动重试。",
@@ -740,6 +827,58 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                         </div>
                       </details>
                     )}
+                    {game &&
+                      (recovery?.sessionId === game.id ||
+                        game.turns.some(
+                          (turn) => turn.status === "pending",
+                        )) && (
+                        <div className="confirmation" aria-live="polite">
+                          <p>
+                            {t(
+                              "查询结果不会再次调用模型。",
+                              "Checking the result does not call the model again.",
+                            )}
+                          </p>
+                          <button
+                            type="button"
+                            className="outline"
+                            disabled={busy}
+                            onClick={() =>
+                              void run(async () => {
+                                try {
+                                  submissionCompleted(
+                                    await submissions().check(game.id, () =>
+                                      api<Game>(`sessions/${game.id}`),
+                                    ),
+                                  );
+                                } catch (error) {
+                                  submissionFailed(error, game.id);
+                                  throw error;
+                                }
+                              })
+                            }
+                          >
+                            {t("查询结果", "Check result")}
+                          </button>
+                          {recovery?.sessionId === game.id &&
+                            recovery.canStartNew && (
+                              <button
+                                type="button"
+                                className="outline"
+                                disabled={
+                                  busy ||
+                                  !(guess ? explanation : question).trim()
+                                }
+                                onClick={() => void submit(undefined, true)}
+                              >
+                                {t(
+                                  "重新发起（可能再次计费）",
+                                  "Send a new request (may be billed again)",
+                                )}
+                              </button>
+                            )}
+                        </div>
+                      )}
                     <form
                       className={"composer" + (guess ? " guess-composer" : "")}
                       onSubmit={submit}
@@ -969,7 +1108,23 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                 {source === "byok" ? (
                   <>
                     <label className="field">
-                      Vercel AI Gateway API Key
+                      {t("调用服务", "API service")}
+                      <select
+                        value={provider}
+                        onChange={(e) => {
+                          setProvider(e.target.value as Provider);
+                          setKey("");
+                        }}
+                      >
+                        {providerIds.map((id) => (
+                          <option key={id} value={id}>
+                            {providers[id].name}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                    <label className="field">
+                      {providers[provider].name} API Key
                       <input
                         type="password"
                         value={key}
@@ -977,7 +1132,13 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                         autoComplete="off"
                         spellCheck={false}
                         data-1p-ignore
-                        placeholder="vck_…"
+                        placeholder={
+                          provider === "vercel"
+                            ? "vck_…"
+                            : provider === "openrouter"
+                              ? "sk-or-…"
+                              : "TypeSafe API Key"
+                        }
                         maxLength={512}
                       />
                     </label>
@@ -1000,14 +1161,15 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                     </div>
                     <p className="muted small">
                       {t(
-                        "刷新页面后需要重新输入 Key。调用会经过本站服务器，费用计入你的 Vercel AI Gateway 账户。本站代码不会将你的 Key 存入数据库、浏览器存储或日志。",
-                        "Reloading the page clears your key. Requests go through this server and are billed to your Vercel AI Gateway account. The app does not save your key in its database, browser storage or logs.",
+                        "刷新页面或切换服务后需要重新输入 Key。调用会经过本站服务器，费用计入所选服务对应的账户。本站代码不会将你的 Key 存入数据库、浏览器存储或日志。",
+                        "Reloading the page or switching services clears your key. Requests go through this server and are billed to your account with the selected service. The app does not save your key in its database, browser storage or logs.",
                       )}
                     </p>
                   </>
                 ) : (
                   <>
                     <p className="muted">
+                      {providers[cfg?.siteProvider || "vercel"].name} ·{" "}
                       {t(
                         "调用费用由站点作者承担。",
                         "The site owner pays for model calls.",
@@ -1026,9 +1188,9 @@ export default function App({ locale }: { locale: "zh" | "en" }) {
                 <h2>{t("关于模型", "About the model")}</h2>
                 <dl>
                   <dt>{t("调用服务", "API service")}</dt>
-                  <dd>Vercel AI Gateway</dd>
+                  <dd>{providers[activeProvider].name}</dd>
                   <dt>{t("模型", "Model")}</dt>
-                  <dd>{cfg?.model || "Jev"}</dd>
+                  <dd>{providers[activeProvider].model}</dd>
                 </dl>
                 <p className="muted small">
                   {t(

@@ -7,7 +7,7 @@
 ### 一键部署
 
 1. 点击 README 的部署按钮。部署流程会引导连接 Neon 集成、创建数据库，并自动注入 `DATABASE_URL`。选择套餐时确认其费用。
-2. 选择唯一的功能设置 `AI_ACCESS_MODE`：`byok_only`、`site_only` 或 `both`。
+2. 选择凭证模式 `AI_ACCESS_MODE`：`byok_only`、`site_only` 或 `both`。
 3. 站点 Key + BYOK 按钮默认 `both`，要求你填自己的 `AI_GATEWAY_API_KEY`；仅 BYOK 按钮默认 `byok_only`，无需站点 Key。
 4. Vercel 使用 Node 24 和仓库中的 `vercel.json`。构建成功后自动建表、同步 Git 题库。
 5. 域名取当前请求 origin，生产修改请求必须同源；无需额外的域名环境变量。自定义域名在 Vercel Domains 中管理。
@@ -16,15 +16,33 @@ Neon 集成产品描述采用[官方 Vercel/Neon 模板](https://github.com/neon
 
 ### 你的站点已有 Vercel 项目
 
-在项目 Storage / Marketplace 中添加 Neon PostgreSQL 并连接当前项目，确认 `DATABASE_URL` 已注入。在 Settings → Environment Variables 设置 `AI_ACCESS_MODE=both` 和 `AI_GATEWAY_API_KEY`，再重新部署。
+在项目 Storage / Marketplace 中添加 Neon PostgreSQL 并连接当前项目，确认 `DATABASE_URL` 已注入。在 Settings → Environment Variables 选择凭证模式、站点服务并填入对应 Key，再重新部署。
 
 | 变量 | 来源与用途 |
 | --- | --- |
-| `AI_ACCESS_MODE` | 唯一功能设置，默认 `byok_only` |
-| `AI_GATEWAY_API_KEY` | 站点模式的服务端凭证，手动填在 Vercel，不进入仓库 |
+| `AI_ACCESS_MODE` | `byok_only`（默认）、`site_only` 或 `both` |
+| `AI_SITE_PROVIDER` | 站点服务：`vercel`（默认）、`typesafe` 或 `openrouter` |
+| `AI_GATEWAY_API_KEY` | 选择 `vercel` 时的站点 Key |
+| `TYPESAFE_API_KEY` | 选择 `typesafe` 时的站点 Key |
+| `OPENROUTER_API_KEY` | 选择 `openrouter` 时的站点 Key |
 | `DATABASE_URL` | Neon 集成自动注入的服务端数据库连接串；也接受其他 PostgreSQL |
 
-除了模式，另外两个是运行所需凭证，并不是功能开关。模型固定为 Jev，还原判断与私有创作/分享始终启用；不提供网页文件上传和 JSON 导入导出。
+只需提供所选站点服务的 Key；缺失时构建会失败，不会借用其他服务的 Key。BYOK 玩家在设置中独立选择服务，不受 `AI_SITE_PROVIDER` 限制。模型均为 Jev，还原判断与私有创作/分享始终启用。
+
+### 使用 TypeSafe 官方 Key 或 OpenRouter
+
+例如开放 TypeSafe 官方 Key，同时允许玩家自带 Key：
+
+```dotenv
+AI_ACCESS_MODE=both
+AI_SITE_PROVIDER=typesafe
+```
+
+在 Vercel 的 Production 环境添加 `TYPESAFE_API_KEY`，然后重新部署。使用 OpenRouter 时改为 `AI_SITE_PROVIDER=openrouter` 并添加 `OPENROUTER_API_KEY`。这些配置也适用于 Docker 的 `.env`。
+
+### 关闭站点 Key
+
+设置 `AI_ACCESS_MODE=byok_only` 并重新部署；界面隐藏站点 Key 入口，后端拒绝新的站点 Key 调用，玩家仍可使用自己的三种服务 Key。查询已有结果不需要模型 Key。该设置只对新部署生效，旧部署可能仍可调用原 Key；要停用所有旧部署的同一凭证，还需在供应商处撤销它。
 
 ### 密钥与更新
 
