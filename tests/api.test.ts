@@ -407,11 +407,23 @@ describe("resource access and gameplay", () => {
       vi.unstubAllEnvs();
     }
   });
-  it("rejects malformed provider results instead of inventing a story answer", () => {
-    expect(hostDecision({ choice: "yes" })).toBe("yes");
-    expect(hostDecision({ choice: "no" })).toBe("no");
-    expect(hostDecision({ choice: "irrelevant" })).toBe("irrelevant");
-    expect(hostDecision({ choice: "uncertain" })).toBe("uncertain");
+  it("derives uncertain from confidence and rejects malformed provider results", () => {
+    expect(hostDecision({ choice: "yes" }, 0.99)).toBe("yes");
+    expect(hostDecision({ choice: "no" }, 0.99)).toBe("no");
+    expect(hostDecision({ choice: "irrelevant" }, 0.99)).toBe("irrelevant");
+    for (const confidence of [
+      undefined,
+      null,
+      NaN,
+      Infinity,
+      -1,
+      1.01,
+      "0.99",
+      0.449,
+    ])
+      expect(hostDecision({ choice: "yes" }, confidence)).toBe("uncertain");
+    expect(hostDecision({ choice: "yes" }, 0.45)).toBe("yes");
+    expect(hostDecision({ choice: "yes" }, 0.451)).toBe("yes");
     for (const answer of [
       undefined,
       null,
@@ -419,10 +431,10 @@ describe("resource access and gameplay", () => {
       { choice: "low_confidence" },
       { choice: "secret solution" },
     ]) {
-      expect(() => hostDecision(answer)).toThrow("upstream_failed");
+      expect(() => hostDecision(answer, 0.99)).toThrow("upstream_failed");
     }
   });
-  it("uses four choices, ignores legacy relevance hints, and normalizes old history", async () => {
+  it("uses three choices, ignores legacy relevance hints, and normalizes old history", async () => {
     const client = new Client();
     const r = await client.request("puzzles", "POST", {
       ...puzzleContent,
@@ -447,12 +459,7 @@ describe("resource access and gameplay", () => {
     );
     mocked.hostChoice = "yes";
     expect(response.data.turns.at(-1).decision).toBe("irrelevant");
-    expect(mocked.hostOptions).toEqual([
-      "yes",
-      "no",
-      "irrelevant",
-      "uncertain",
-    ]);
+    expect(mocked.hostOptions).toEqual(["yes", "no", "irrelevant"]);
     expect(
       (mocked.hostState as { reference: object }).reference,
     ).not.toHaveProperty("irrelevant_topics");
@@ -478,19 +485,19 @@ describe("resource access and gameplay", () => {
       );
     }
   });
-  it("keeps low-confidence or unscored host choices and persists no-threshold metadata", async () => {
+  it("derives uncertain from low or missing confidence and persists the decision threshold", async () => {
     const client = new Client();
     const game = await client.request("sessions", "POST", {
       puzzleId: "sample-1",
     });
     try {
-      for (const [choice, confidence] of [
-        ["yes", 0.1],
-        ["no", 0.4],
-        ["irrelevant", 0.62],
-        ["uncertain", 0.99],
-        ["uncertain", 0.3],
-        ["yes", undefined],
+      for (const [choice, confidence, decision] of [
+        ["yes", 0.1, "uncertain"],
+        ["no", 0.4, "uncertain"],
+        ["irrelevant", 0.62, "irrelevant"],
+        ["uncertain", 0.99, "uncertain"],
+        ["uncertain", 0.3, "uncertain"],
+        ["yes", undefined, "uncertain"],
       ] as const) {
         mocked.hostChoice = choice;
         mocked.hostConfidence = confidence;
@@ -505,14 +512,14 @@ describe("resource access and gameplay", () => {
           "canary-host-key",
         );
         expect(response.status).toBe(200);
-        expect(response.data.turns.at(-1).decision).toBe(choice);
+        expect(response.data.turns.at(-1).decision).toBe(decision);
         expect(response.data.turns.at(-1).confidence.score).toBe(
           confidence ?? null,
         );
-        expect(response.data.turns.at(-1).confidence.threshold).toBeNull();
+        expect(response.data.turns.at(-1).confidence.threshold).toBe(0.45);
         const restored = await client.request(`sessions/${game.data.id}`);
-        expect(restored.data.turns.at(-1).confidence.threshold).toBeNull();
-        expect(restored.data.turns.at(-1).decision).toBe(choice);
+        expect(restored.data.turns.at(-1).confidence.threshold).toBe(0.45);
+        expect(restored.data.turns.at(-1).decision).toBe(decision);
       }
     } finally {
       mocked.hostChoice = "yes";

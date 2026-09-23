@@ -58,6 +58,11 @@ export function Confidence({
               ? "For reference only; this score does not change the host's answer"
               : "评分仅供参考，不改变主持人的回答"
             : `${en ? "Decision threshold: " : "判定阈值："}${formatScore(value.threshold)}`}
+          {value.threshold !== null &&
+            !isGuess &&
+            (en
+              ? `. Below it the host answers "cannot determine".`
+              : "。低于该值时主持人回答「无法确认」。")}
           {en
             ? ". Confidence measures how concentrated the option probabilities are, not the probability that an answer is correct."
             : "。Confidence 表示选项概率分布的集中程度，不代表答案正确率。"}

@@ -272,8 +272,8 @@ export async function handle(req: NextRequest, paths: string[]) {
           sql`INSERT INTO turns(id,session_id,request_id,kind,input) VALUES (${tid},${id},${b.clientRequestId},${action === "guess" ? "guess" : "question"},${b.text})`,
         );
         try {
-          const history = await query<{ input: string; decision: string }>(
-            sql`SELECT input,decision FROM turns WHERE session_id=${id} AND status='complete' ORDER BY created_at DESC LIMIT 6`,
+          const history = await query<{ input: string }>(
+            sql`SELECT input FROM turns WHERE session_id=${id} AND status='complete' ORDER BY created_at DESC LIMIT 6`,
           );
           const result = await judge(
             s.secret_content,
